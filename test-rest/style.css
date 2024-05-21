@@ -1,0 +1,168 @@
+
+:root{
+    --cols: 30%;
+}
+
+
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.active{
+    display: none;
+}
+
+.table{
+    width: 70%;
+    height: 50%;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+}
+
+.tableContainer{
+    width: 100%;
+    height: 100%;
+}
+
+.table-header{
+    width: 100%;
+    height:5%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.table-input{
+    width: 320px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.table-input i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+    font-size: 18px;
+}
+
+.table-input input{
+    width: 90%;
+    height: 90%;
+    margin-left: 8px;
+    border: none;
+    outline: none;
+}
+
+.input{
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: blue;
+    justify-content: space-between;
+}
+
+.input-header{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+}
+
+.input-main{
+    width: 100%;
+    height:60%;
+    background-color: green;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-boxes{
+    display:flex;
+    flex-direction: column;
+    background-color: orange;
+    width:45%;
+    height: 35%;
+}
+
+.input-boxes input{
+    width: 75%;
+}
+
+.input-footer, .input-footer--two{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: red;
+}
+
+.input-footer button{
+    width: 20%;
+    height:50%;
+}
+
+
+
+.table-wrap{
+    width: 100%;
+    height: 87%;
+    border: 4px solid #e8e8e8;
+    overflow: auto;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead tr th{
+    height: 40px;
+    position: sticky;
+    top: 0;
+    text-align: start;
+    background-color: #ffff;
+     box-shadow: 0px 0px 0 4px #e8e8e8;
+     padding-left:12px;
+}
+
+thead tr th:first-of-type{
+    width: 10px;
+    padding-left: 10px;
+}
+
+thead tr th i{
+    margin-right :14px;
+}
+
+table td {
+  padding: 10px;
+}
+
+tbody tr {
+  border-bottom: 2px solid #e8e8e8;
+}
+
+tbody tr:hover {
+  background: #e6f7ff;
+}
+
