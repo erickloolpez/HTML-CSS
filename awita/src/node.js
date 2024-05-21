@@ -22,7 +22,7 @@ const suscripcionTable = document.getElementById('suscripcionTable');
 const historialTable = document.getElementById('historialTable');
 const facturaTable = document.getElementById('facturaTable');
 
-
+//Botones del aside de la seccion del ADMIN
 const clienteBtn = document.querySelector('.btnClientes');
 const planBtn = document.querySelector('.btnPlanes');
 const suscripcionBtn = document.querySelector('.btnSuscripcion');
@@ -56,10 +56,20 @@ const spinnerIcon = document.getElementById('spinnerSvg')
 const spinnerP = document.getElementById('spinnerP')
 const payMent = document.querySelector('.payment-ready')
 
-const payContainer = document.getElementById('payContainer')
-/*
+
+//Elementos del form del layout Factura
+const btnCrearFactura = document.getElementById('btnCrearFactura')
 const nombreCliente = document.getElementById('nombreCliente')
 const apellidoCliente = document.getElementById('apellidoCliente')
 const emailCliente = document.getElementById('emailCliente')
 const telefonoCliente = document.getElementById('telefonoCliente')
-const cedulaCliente = document.getElementById('inputCI')*/
+const cedulaCliente = document.getElementById('inputCI')
+const payContainer = document.getElementById('payContainer')
+const payLoading = document.getElementById('payLoading')
+
+
+//Elementos dentro del spinner
+const lucky = document.getElementById('lucky') //Este es el contenedor del spiner (tiene el animation)
+const checkSpinner = document.getElementById('checkSpinner')
+const textSpinner = document.getElementById('textSpinner')
+const buttonSpinner = document.getElementById('buttonSpinner')

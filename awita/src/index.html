@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
 </head>
@@ -427,29 +428,30 @@
                     <p class="payment-info"></p>
                     <div class="payment-invoice--container">
                         <div class="payment-invoice--name">
-                            <input id="nombreCliente" type="text" placeholder="Nombre" runat="server" />
-                            <input id="apellidoCliente" type="text" placeholder="Apellido" runat="server" />
+                            <input id="nombreCliente" type="text" placeholder="Nombre" />
+                            <input id="apellidoCliente" type="text" placeholder="Apellido" />
                         </div>
                         <div class="payment-invoice--info">
-                            <input id="emailCliente" type="text" placeholder="Email" runat="server" />
+                            <input id="emailCliente" type="text" placeholder="Email" />
                             <input id="telefonoCliente" type="text" placeholder="Telefono" />
                         </div>
                     </div>
-                    <input id="inputCI" class="inputCI" type="text" placeholder="CI" runat="server" />
+                    <input id="inputCI" class="inputCI" type="text" placeholder="CI" />
                     <!-- <asp:TextBox ID="TextBoxPlanID" runat="server" Style="display: none"></asp:TextBox>
                     <asp:Button ID="Button7" runat="server" OnClick="Button7_Click" Text="Enviar" /> -->
-                    <button id="Button7">Enviar</button>
+                    <button id="btnCrearFactura">Enviar</button>
                 </div>
             </div>
             <div class="payment-ready" id="payLoading">
                 <div id="lucky" class="spinner">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="48px" height="48px">
+                    <svg id="checkSpinner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="48px"
+                        height="48px">
                         <path
                             d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
                     </svg>
                 </div>
-                <p>Encuentre su orden en su banca Favorita....</p>
-                <button>Volver al Inicio</button>
+                <p id="textSpinner">Encuentre su orden en su banca Favorita....</p>
+                <button id="buttonSpinner">Volver al Inicio</button>
             </div>
         </div>
 

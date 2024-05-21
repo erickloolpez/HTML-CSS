@@ -8,6 +8,8 @@
     facturaTable.classList.add('active-table');
 })
 
+
+
 /*display the tables of each control*/
 clienteBtn.addEventListener('click', () => {
     clienteBtn.classList.add('active')
@@ -90,6 +92,8 @@ facturaBtn.addEventListener('click', () => {
 
 })
 
+
+//Switch de la seccion de planes
 switchButton.addEventListener('change', () => {
     if (switchButton.checked) {
         console.log('hola')
@@ -109,10 +113,13 @@ switchButton.addEventListener('change', () => {
     }
 })
 
+//Section de los botones que estan en los planes
 
 btnSediento.addEventListener('click', (event) => {
     event.preventDefault();
-    paymentSection.style.display = 'grid';
+    layoutSection.style.display = 'none'
+    planSection.style.display = 'none'
+    paymentSection.style.display = 'grid'
 
     if (switchButton.checked) {
         location.hash = `?PLAN-4=${sedientoPrice.textContent}=Sediento-Anual`
@@ -130,11 +137,17 @@ btnSediento.addEventListener('click', (event) => {
 
     layoutSection.style.display = 'none';
     planSection.style.display = 'none';
+
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    window.scrollTo(0,0)
 })
 
 
 btnRefrescado.addEventListener('click', (event) => {
     event.preventDefault();
+    layoutSection.style.display = 'none'
+    planSection.style.display = 'none'
     paymentSection.style.display = 'grid';
 
     if (switchButton.checked) {
@@ -153,11 +166,17 @@ btnRefrescado.addEventListener('click', (event) => {
 
     layoutSection.style.display = 'none';
     planSection.style.display = 'none';
+
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    window.scrollTo(0,0)
 })
 
 btnHidratado.addEventListener('click', (event) => {
     event.preventDefault();
-    paymentSection.style.display = 'grid';
+    layoutSection.style.display = 'none'
+    planSection.style.display = 'none'
+    paymentSection.style.display = 'grid'
 
     if (switchButton.checked) {
         location.hash = `?PLAN-6=${hidratadoPrice.textContent}=Hidratado-Anual`
@@ -175,18 +194,51 @@ btnHidratado.addEventListener('click', (event) => {
 
     layoutSection.style.display = 'none';
     planSection.style.display = 'none';
+
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    window.scrollTo(0,0)
 })
 
 
+//Icono del layout de Factura para volver al inicio
 navTwoLogo.addEventListener('click', () => {
     paymentSection.style.display = 'none';
     layoutSection.style.display = 'flex'
-    planSection.style.display ='flex'
+    planSection.style.display = 'flex'
 
     location.hash = ''
 
 })
 
+//Boton que genera la nueva factura
+btnCrearFactura.addEventListener('click',()=>{
+    payContainer.style.display = 'none'
+    payLoading.style.display = 'grid'
+    lucky.classList.add('active')
+})
+
+//Animacion de los elementos dentro del spinner
+lucky.addEventListener('animationend',()=>{
+    checkSpinner.style.display = 'block'
+    textSpinner.style.display = 'block'
+    buttonSpinner.style.display = 'inline-block'
+})
+
+//Boton que vuelve al inicio dentro del spinner
+buttonSpinner.addEventListener('click',()=>{
+    payLoading.style.display='none'
+    checkSpinner.style.display = 'none'
+    textSpinner.style.display = 'none'
+    buttonSpinner.style.display = 'none'
+    paymentSection.style.display = 'none'
+
+    layoutSection.style.display ='flex'
+    planSection.style.display ='flex'
+})
+
+
+//Boto que abre toda la seccion del ADMIN
 adminLogo.addEventListener('click', () => {
     layoutSection.style.display = 'flex';
     planSection.style.display = 'flex';
@@ -198,10 +250,8 @@ adminLogo.addEventListener('click', () => {
     facturaTable.classList.add('active-table');
 })
 
-spinner.addEventListener('click', () => {
-    alert("puto de verga")
-})
 
+//Todo lo que tiene que ver con el window
 window.addEventListener('load', () => {
     location.hash = ''
     paymentSection.style.display = 'none'
