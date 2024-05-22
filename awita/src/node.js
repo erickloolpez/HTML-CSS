@@ -73,3 +73,10 @@ const lucky = document.getElementById('lucky') //Este es el contenedor del spine
 const checkSpinner = document.getElementById('checkSpinner')
 const textSpinner = document.getElementById('textSpinner')
 const buttonSpinner = document.getElementById('buttonSpinner')
+
+//Input Cliente Add
+const clienteIdTop = document.getElementById('clienteIDTop')
+const inputId = document.getElementById('clienteID')
+const inputNombre = document.getElementById('clienteNombre')
+const inputApellido = document.getElementById('clienteApellido')
+const inputEmail = document.getElementById('clienteEmail')

@@ -1,30 +1,23 @@
 ﻿const inputScreen = document.querySelector('.input')
 
-const tableHead = document.getElementById('table-head')
-const tableBody = document.getElementById('table-body')
+const tableBody = document.getElementById('table-body--client')
 
 
 const postButton = document.getElementById('postButton')
-const inputId = document.getElementById('clienteID')
-const inputNombre = document.getElementById('clienteNombre')
-const inputApellido = document.getElementById('clienteApellido')
-const inputEmail = document.getElementById('clienteEmail')
 
 const clients = []
 const colsGrid = document.querySelector('.table')
-let flag = true
 const inputFooterTwo = document.querySelector('.input-footer--two')
 const inputFooter = document.querySelector('.input-footer')
 
 //Botones New y X 
-const buttonX = document.getElementById('buttonX')
-const buttonNew = document.getElementById('buttonNew')
+const buttonX = document.querySelector('.buttonX')
+const buttonNew = document.querySelector ('.buttonNew')
 const collectionButtons = document.querySelector('.collectionButtons')
 
 //ID Container
 const idContainer = document.querySelector('.id-container')
-const idBox = document.getElementById('idBox')
-const clienteIdTop = document.getElementById('clienteIDTop')
+const idBox = document.querySelector('.idBox')
 
 
 postButton.addEventListener('click', () => {
@@ -100,7 +93,6 @@ buttonX.addEventListener('click', () => {
 })
 
 function handleClick(id) {
-    flag = true
     const checkItem = document.getElementById(id)
     if (checkItem.checked) {
         //Boton New

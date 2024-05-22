@@ -2,10 +2,12 @@
     layoutSection.style.display = 'none';
     planSection.style.display = 'none';
     asideSection.style.display = 'grid';
-    planTable.classList.add('active-table');
-    suscripcionTable.classList.add('active-table');
-    historialTable.classList.add('active-table');
-    facturaTable.classList.add('active-table');
+
+    clienteTable.classList.add('active-table')
+    planTable.classList.remove('active-table');
+    suscripcionTable.classList.remove('active-table');
+    historialTable.classList.remove('active-table');
+    facturaTable.classList.remove('active-table');
 })
 
 
@@ -20,11 +22,11 @@ clienteBtn.addEventListener('click', () => {
     facturaBtn.classList.remove('active')
 
 
-    clienteTable.classList.remove('active-table');
-    planTable.classList.add('active-table');
-    suscripcionTable.classList.add('active-table');
-    historialTable.classList.add('active-table');
-    facturaTable.classList.add('active-table');
+    clienteTable.classList.add('active-table');
+    planTable.classList.remove('active-table');
+    suscripcionTable.classList.remove('active-table');
+    historialTable.classList.remove('active-table');
+    facturaTable.classList.remove('active-table');
 })
 
 planBtn.addEventListener('click', () => {
@@ -36,11 +38,11 @@ planBtn.addEventListener('click', () => {
     facturaBtn.classList.remove('active')
 
 
-    planTable.classList.remove('active-table');
-    clienteTable.classList.add('active-table');
-    suscripcionTable.classList.add('active-table');
-    historialTable.classList.add('active-table');
-    facturaTable.classList.add('active-table');
+    planTable.classList.add('active-table');
+    clienteTable.classList.remove('active-table');
+    suscripcionTable.classList.remove('active-table');
+    historialTable.classList.remove('active-table');
+    facturaTable.classList.remove('active-table');
 })
 
 suscripcionBtn.addEventListener('click', () => {
@@ -52,11 +54,11 @@ suscripcionBtn.addEventListener('click', () => {
     facturaBtn.classList.remove('active')
 
 
-    suscripcionTable.classList.remove('active-table');
-    clienteTable.classList.add('active-table');
-    planTable.classList.add('active-table');
-    historialTable.classList.add('active-table');
-    facturaTable.classList.add('active-table');
+    suscripcionTable.classList.add('active-table');
+    clienteTable.classList.remove('active-table');
+    planTable.classList.remove('active-table');
+    historialTable.classList.remove('active-table');
+    facturaTable.classList.remove('active-table');
 })
 
 historialBtn.addEventListener('click', () => {
@@ -68,11 +70,11 @@ historialBtn.addEventListener('click', () => {
     facturaBtn.classList.remove('active')
 
 
-    historialTable.classList.remove('active-table');
-    clienteTable.classList.add('active-table');
-    planTable.classList.add('active-table');
-    suscripcionTable.classList.add('active-table');
-    facturaTable.classList.add('active-table');
+    historialTable.classList.add('active-table');
+    clienteTable.classList.remove('active-table');
+    planTable.classList.remove('active-table');
+    suscripcionTable.classList.remove('active-table');
+    facturaTable.classList.remove('active-table');
 })
 
 facturaBtn.addEventListener('click', () => {
@@ -84,11 +86,11 @@ facturaBtn.addEventListener('click', () => {
     clienteBtn.classList.remove('active')
 
 
-    facturaTable.classList.remove('active-table');
-    historialTable.classList.add('active-table');
-    clienteTable.classList.add('active-table');
-    planTable.classList.add('active-table');
-    suscripcionTable.classList.add('active-table');
+    facturaTable.classList.add('active-table');
+    historialTable.classList.remove('active-table');
+    clienteTable.classList.remove('active-table');
+    planTable.classList.remove('active-table');
+    suscripcionTable.classList.remove('active-table');
 
 })
 

@@ -991,16 +991,16 @@ aside {
 
 /*Section of Table*/
 
-.active-table {
-    display: none;
-}
 .table{
     width: 100%;
     height: 50%;
     overflow: hidden;
-    display: grid;
+    display: none;
     grid-template-columns: 100%;
     grid-template-rows: 100%;
+}
+.active-table {
+    display: grid;
 }
 
 .tableContainer{

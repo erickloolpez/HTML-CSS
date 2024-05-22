@@ -365,10 +365,10 @@
                                 <input type="text" placeholder="Enter your search">
                             </div>
                             <div class="collectionButtons">
-                                <button id="buttonX">
+                                <button class="buttonX">
                                     <i class="fa-solid fa-xmark"></i>
                                 </button>
-                                <button id="buttonNew" onclick='handleClickNew()'>New</button>
+                                <button class="buttonNew" onclick='handleClickNew()'>New</button>
                             </div>
                         </div>
                         <div class="table-wrap">
@@ -382,7 +382,7 @@
                                         <th><i class="fa-regular fa-envelope"></i>Correo&UpArrow;</span></th>
                                     </tr>
                                 </thead>
-                                <tbody id="table-body">
+                                <tbody id="table-body--client">
                                 </tbody>
                             </table>
                         </div>
@@ -400,7 +400,7 @@
                             </div>
                         </div>
                         <div class="input-main">
-                            <div id='idBox' class="input-boxes">
+                            <div class='idBox' class="input-boxes">
                                 <h2>ID:</h2>
                                 <input id="clienteID" type="text">
                             </div>
@@ -427,22 +427,94 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Plan Table -->
+                <div class="table" id="planTable">
+                    <div class="tableContainer">
+                        <div class="table-header">
+                            <div class="table-input">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" placeholder="Enter your search">
+                            </div>
+                            <div class="collectionButtons">
+                                <button id="buttonX">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                                <button id="buttonNew" onclick='handleClickNew()'>New</button>
+                            </div>
+                        </div>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox"></th>
+                                        <th><i class="fa-solid fa-fingerprint"></i>id&UpArrow;</span></th>
+                                        <th><i class="fa-regular fa-user"></i>Nombre &UpArrow;</span></th>
+                                        <th>Tipo&UpArrow;</span></th>
+                                        <th><i class="fa-regular fa-envelope"></i>Precio&UpArrow;</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-body">
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="input">
+                        <div class="input-header">
+                            <img src="./assets/img/planesIcon.png" alt="planes_icon">
+                            <div class="input-header--id">
+                                <h1>Plan</h1>
+                                <div class="id-container">
+                                    <h2>ID:</h2>
+                                    <input id="clienteIDTop" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-main">
+                            <div id='idBox' class="input-boxes">
+                                <h2>ID:</h2>
+                                <input id="clienteID" type="text">
+                            </div>
+                            <div class="input-boxes">
+                                <h2>Nombre:</h2>
+                                <input id="clienteNombre" type="text">
+                            </div>
+                            <div class="input-boxes">
+                                <h2>Tipo:</h2>
+                                <input id="clienteApellido" type="text">
+                            </div>
+                            <div class="input-boxes">
+                                <h2>Precio:</h2>
+                                <input id="clienteEmail" type="text">
+                            </div>
+
+                        </div>
+                        <div class="input-footer">
+                            <button id="postButton">Guardar</button>
+                            <button>Eliminar</button>
+                        </div>
+                        <div class='input-footer--two'>
+                            <button>Crear</button>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="active-table" id="planTable">
+
+            <div class="table" id="suscripcionTable">
             </div>
 
 
-            <div class="active-table" id="suscripcionTable">
+            <div class="table" id="historialTable">
             </div>
 
 
-            <div class="active-table" id="historialTable">
+            <div class="table active-table" id="facturaTable">
             </div>
 
+        </div>
 
-            <div class="active-table" id="facturaTable">
-            </div>
 
         </div>
         <!--End of the Tables Section-->
