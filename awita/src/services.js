@@ -21,6 +21,11 @@ const buttonX = document.getElementById('buttonX')
 const buttonNew = document.getElementById('buttonNew')
 const collectionButtons = document.querySelector('.collectionButtons')
 
+//ID Container
+const idContainer = document.querySelector('.id-container')
+const idBox = document.getElementById('idBox')
+const clienteIdTop = document.getElementById('clienteIDTop')
+
 
 postButton.addEventListener('click', () => {
 
@@ -119,10 +124,10 @@ function handleClick(id) {
         let clientFound = clients.find(cli => cli.id == id)
         console.log('Encontrado', clientFound)
 
-        inputId.value = clientFound.id
         inputNombre.value = clientFound.nombre
         inputApellido.value = clientFound.apellido
         inputEmail.value = clientFound.email
+        clienteIdTop.value = clientFound.id
 
 
         var group = "input[type='checkbox'][name='" + checkItem.name + "']";
@@ -139,6 +144,10 @@ function handleClick(id) {
         buttonX.style.width = '35%'
         buttonX.style.display = 'block'
 
+        //Id Container
+        idBox.style.display = 'none'
+        idContainer.style.display = 'flex'
+
         inputScreen.style.display = 'flex'
 
 
@@ -147,7 +156,6 @@ function handleClick(id) {
 }
 
 function handleClickNew() {//podriamos mandar el nombre del name
-    if (flag) {
         var group = "input[type='checkbox'][name='" + 'clients' + "']";
 
         document.querySelectorAll(group).forEach(function (checkbox) {
@@ -172,17 +180,10 @@ function handleClickNew() {//podriamos mandar el nombre del name
         buttonX.style.width = '35%'
         buttonX.style.display = 'block'
 
-        inputScreen.style.display = 'flex'
+        //Id Container
+        idContainer.style.display = 'none'
+        idBox.style.display ='flex'
 
-        flag = false
-    } else {
-        colsGrid.style.gridTemplateColumns = '100%'
-        flag = true
-        //boton New
-        collectionButtons.style.width = '5%'
-        buttonX.style.display = 'none'
-        buttonNew.style.width = '100%'
-        inputScreen.style.display = 'none'
-    }
+        inputScreen.style.display = 'flex'
 }
 
