@@ -55,10 +55,10 @@ let pieData = {
     }]
 };
 
-function createChart(type, height = 320) {
+function createChart(type, height = 100) {
     const canvasContainer = document.getElementById('canvas-container');
     canvasContainer.innerHTML = `<canvas id="myChart"></canvas>`;
-    canvasContainer.style.height = `${height}px`;
+    canvasContainer.style.height = `${height}%`;
 
     const ctx = document.getElementById('myChart').getContext('2d');
     return new Chart(ctx, {
@@ -88,10 +88,10 @@ function createChart(type, height = 320) {
     });
 
 }
-function createPie(type, height = 278) {
+function createPie(type, height = 100) {
     const canvasContainer = document.getElementById('canvas-containerTwo');
     canvasContainer.innerHTML = `<canvas id="myPie"></canvas>`;
-    canvasContainer.style.height = `${height}px`;
+    canvasContainer.style.height = `${height}%`;
 
     const ctx = document.getElementById('myPie').getContext('2d');
     return new Chart(ctx, {

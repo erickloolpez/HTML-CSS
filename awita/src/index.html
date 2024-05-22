@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
@@ -11,6 +14,8 @@
 
 <body>
     <header>
+        <input type="text" id="inputBungee" style="display: none">
+        <input type="text" id="halfBungee" style="display: none">
         <!-- <asp:TextBox ID="inputBungee" runat="server" Style="display: none"></asp:TextBox>
             <asp:TextBox ID="halfBungee" runat="server" Style="display: none"></asp:TextBox> -->
         <div class="header-content">
@@ -353,25 +358,90 @@
 
                 <!--Section of the Tables-->
                 <div class="table" id="clienteTable">
+                    <div class="tableContainer">
+                        <div class="table-header">
+                            <div class="table-input">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" placeholder="Enter your search">
+                            </div>
+                            <div class="collectionButtons">
+                                <button id="buttonX">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                                <button id="buttonNew" onclick='handleClickNew()'>New</button>
+                            </div>
+                        </div>
+                        <div class="table-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox"></th>
+                                        <th><i class="fa-solid fa-fingerprint"></i>id&UpArrow;</span></th>
+                                        <th><i class="fa-regular fa-user"></i>Nombre &UpArrow;</span></th>
+                                        <th>Apellido&UpArrow;</span></th>
+                                        <th><i class="fa-regular fa-envelope"></i>Correo&UpArrow;</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-body">
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="input">
+                        <div class="input-header">
+                            <img src="./assets/img/usersIcons.png" alt="usuario_icon">
+                            <div class="input-header--id">
+                                <h1>Cliente</h1>
+                                <div class="id-container">
+                                    <h2>ID:</h2>
+                                    <input id="clienteID" type="text">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-main">
+                            <div class="input-boxes">
+                                <h2>Nombre:</h2>
+                                <input id="clienteNombre" type="text">
+                            </div>
+                            <div class="input-boxes">
+                                <h2>Apellido:</h2>
+                                <input id="clienteApellido" type="text">
+                            </div>
+                            <div class="input-boxes">
+                                <h2>Email:</h2>
+                                <input id="clienteEmail" type="text">
+                            </div>
+
+                        </div>
+                        <div class="input-footer">
+                            <button id="postButton">Guardar</button>
+                            <button>Eliminar</button>
+                        </div>
+                        <div class='input-footer--two'>
+                            <button>Crear</button>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="table" id="planTable">
-                </div>
-
-
-                <div class="table" id="suscripcionTable">
-                </div>
-
-
-                <div class="table" id="historialTable">
-                </div>
-
-
-                <div class="table" id="facturaTable">
-                </div>
-
             </div>
-            <!--End of the Tables Section-->
+
+            <div class="active-table" id="planTable">
+            </div>
+
+
+            <div class="active-table" id="suscripcionTable">
+            </div>
+
+
+            <div class="active-table" id="historialTable">
+            </div>
+
+
+            <div class="active-table" id="facturaTable">
+            </div>
+
+        </div>
+        <!--End of the Tables Section-->
         </div>
         <!--End of the Admin Container-->
 
@@ -437,6 +507,7 @@
                         </div>
                     </div>
                     <input id="inputCI" class="inputCI" type="text" placeholder="CI" />
+                    <input type="text" id="TextBoxPlanID" style="display:none">
                     <!-- <asp:TextBox ID="TextBoxPlanID" runat="server" Style="display: none"></asp:TextBox>
                     <asp:Button ID="Button7" runat="server" OnClick="Button7_Click" Text="Enviar" /> -->
                     <button id="btnCrearFactura">Enviar</button>
