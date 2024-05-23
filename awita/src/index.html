@@ -374,7 +374,7 @@
                         <div class="table-wrap">
                             <table>
                                 <thead>
-                                    <tr>
+                                    <tr id="table-head">
                                         <th><input type="checkbox"></th>
                                         <th><i class="fa-solid fa-fingerprint"></i>id&UpArrow;</span></th>
                                         <th><i class="fa-regular fa-user"></i>Nombre &UpArrow;</span></th>
@@ -382,7 +382,7 @@
                                         <th><i class="fa-regular fa-envelope"></i>Correo&UpArrow;</span></th>
                                     </tr>
                                 </thead>
-                                <tbody id="table-body--client">
+                                <tbody id="table-body">
                                 </tbody>
                             </table>
                         </div>
@@ -390,17 +390,17 @@
                     </div>
                     <div class="input">
                         <div class="input-header">
-                            <img src="./assets/img/usersIcons.png" alt="usuario_icon">
+                            <!-- <img src="./assets/img/usersIcons.png" alt="usuario_icon">
                             <div class="input-header--id">
                                 <h1>Cliente</h1>
                                 <div class="id-container">
                                     <h2>ID:</h2>
                                     <input id="clienteIDTop" type="text">
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="input-main">
-                            <div class='idBox' class="input-boxes">
+                            <!-- <div class="input-boxes idBox">
                                 <h2>ID:</h2>
                                 <input id="clienteID" type="text">
                             </div>
@@ -415,8 +415,7 @@
                             <div class="input-boxes">
                                 <h2>Email:</h2>
                                 <input id="clienteEmail" type="text">
-                            </div>
-
+                            </div> -->
                         </div>
                         <div class="input-footer">
                             <button id="postButton">Guardar</button>
@@ -429,18 +428,18 @@
                 </div>
 
                 <!-- Plan Table -->
-                <div class="table" id="planTable">
+                <!-- <div class="table gridPlan" id="planTable">
                     <div class="tableContainer">
                         <div class="table-header">
                             <div class="table-input">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                                 <input type="text" placeholder="Enter your search">
                             </div>
-                            <div class="collectionButtons">
-                                <button id="buttonX">
+                            <div class="collectionButtons collectionButtonsPlan">
+                                <button class="buttonX buttonXPlan">
                                     <i class="fa-solid fa-xmark"></i>
                                 </button>
-                                <button id="buttonNew" onclick='handleClickNew()'>New</button>
+                                <button class="buttonNewPlan" onclick='handleClickNewPlan()'>New</button>
                             </div>
                         </div>
                         <div class="table-wrap">
@@ -454,39 +453,39 @@
                                         <th><i class="fa-regular fa-envelope"></i>Precio&UpArrow;</span></th>
                                     </tr>
                                 </thead>
-                                <tbody id="table-body">
+                                <tbody id="table-body--plans">
                                 </tbody>
                             </table>
                         </div>
 
                     </div>
-                    <div class="input">
+                    <div class="input inputPlan">
                         <div class="input-header">
                             <img src="./assets/img/planesIcon.png" alt="planes_icon">
                             <div class="input-header--id">
                                 <h1>Plan</h1>
                                 <div class="id-container">
                                     <h2>ID:</h2>
-                                    <input id="clienteIDTop" type="text">
+                                    <input id="planIDTop" type="text">
                                 </div>
                             </div>
                         </div>
                         <div class="input-main">
-                            <div id='idBox' class="input-boxes">
+                            <div class="input-boxes idBox">
                                 <h2>ID:</h2>
-                                <input id="clienteID" type="text">
+                                <input id="planID" type="text">
                             </div>
                             <div class="input-boxes">
                                 <h2>Nombre:</h2>
-                                <input id="clienteNombre" type="text">
+                                <input id="planNombre" type="text">
                             </div>
                             <div class="input-boxes">
                                 <h2>Tipo:</h2>
-                                <input id="clienteApellido" type="text">
+                                <input id="planTipo" type="text">
                             </div>
                             <div class="input-boxes">
                                 <h2>Precio:</h2>
-                                <input id="clienteEmail" type="text">
+                                <input id="planPrecio" type="text">
                             </div>
 
                         </div>
@@ -499,8 +498,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
+            <div class="table" id="planTable">
+            </div>
 
             <div class="table" id="suscripcionTable">
             </div>

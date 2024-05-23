@@ -3,6 +3,8 @@
     planSection.style.display = 'none';
     asideSection.style.display = 'grid';
 
+    location.hash = 'Clientes'
+
     clienteTable.classList.add('active-table')
     planTable.classList.remove('active-table');
     suscripcionTable.classList.remove('active-table');

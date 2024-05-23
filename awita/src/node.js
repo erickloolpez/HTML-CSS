@@ -80,3 +80,11 @@ const inputId = document.getElementById('clienteID')
 const inputNombre = document.getElementById('clienteNombre')
 const inputApellido = document.getElementById('clienteApellido')
 const inputEmail = document.getElementById('clienteEmail')
+
+//Input Plan add
+const inputPlanIdTop = document.getElementById('planIDTop')
+const inputPlanId = document.getElementById('planID')
+const inputPlanNombre = document.getElementById('planNombre')
+const inputPlanTipo = document.getElementById('planTipo')
+const inputPlanPrecio = document.getElementById('planPrecio')
+
