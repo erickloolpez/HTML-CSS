@@ -11,8 +11,8 @@ const buttonX = document.querySelector('.buttonX')
 const inputScreen = document.querySelector('.input')
 let map = new Map()
 
-const api = (url, column) => {
-    fetch(url)
+const api = async (url, column) => {
+    await fetch(url)
         .then((res) => {
             if (res.ok) {
                 console.log(`HTTP ${column}  request successful`)
@@ -43,9 +43,9 @@ const api = (url, column) => {
         .catch((error) => console.log(error))
 }
 
-const apiPost = (answers,controller, action) => {
-    fetch(`http://localhost:9099/api/${controller}/${action}`, {
-        method: 'post',
+const apiPost = async (answers, controller, action, method) => {
+    await fetch(`http://localhost:9099/api/${controller}/${action}`, {
+        method: `${method}`,
         headers: {
             "Content-Type": "application/json"
         },
@@ -54,9 +54,10 @@ const apiPost = (answers,controller, action) => {
     })
         .then((res) => {
             if (res.ok) {
-                console.log('HTTP POST request successful')
+                console.log(`HTTP ${method} request successful`)
+                api(getClientes, 'Clientes')
             } else {
-                console.log('HTTP POST request unsuccessful')
+                console.log(`HTTP ${method} request unsuccessful`)
             }
             return res
         })
@@ -73,8 +74,9 @@ const cleanClients = (template) => {
 }
 
 const factoryParts = (template, data, column) => {
+    tableHead.innerHTML = ''
+    tableBody.innerHTML = ''
     let headContent
-    let bodyContent
 
     template.forEach(col => {
         headContent = `<th><i class="fa-solid fa-fingerprint"></i>${col}&UpArrow;</span></th>`
@@ -265,30 +267,42 @@ const handleClickNew = () => {
 
 }
 
-const setPost = (method) => {
+const setMethod = (method) => {
     const [err, column] = location.hash.split('#')
 
     if (column == 'Clientes') {
+        let action
         let item = map.get(column)[1]
         let template = Object.keys(item)
         template = cleanClients(template)
 
-        let action = (method == 'post') ? 'crearCliente' : 'actualizarCliente'
+        switch(method){
+            case 'post':
+                action = 'crearCliente'
+                break
+            case 'put':
+                action = 'actualizarCliente'
+                break
+            case 'delete':
+                action = 'eliminarCliente'
+                break
+        }
 
-        factoryBody(column, action, template)
+
+        factoryBody(column, action, template, method)
     }
 }
 
-const factoryBody = (column,action, template)=> {
-        const answers = {}
+const factoryBody = (column, action, template, method) => {
+    const answers = {}
 
-        for (let i = 0; i < template.length; i++) {
-            const inputItem = document.getElementById(`${column}_${template[i]}`)
-            answers[template[i]] = inputItem.value
-            inputItem.value = ''
-        }
-        
-        apiPost(answers, column, action)
+    for (let i = 0; i < template.length; i++) {
+        const inputItem = document.getElementById(`${column}_${template[i]}`)
+        answers[template[i]] = inputItem.value
+        inputItem.value = ''
+    }
+
+    apiPost(answers, column, action, method)
 }
 
 buttonX.addEventListener('click', () => {
