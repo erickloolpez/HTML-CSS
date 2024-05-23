@@ -265,16 +265,21 @@ const handleClickNew = () => {
 
 }
 
-const setPost = () => {
+const setPost = (method) => {
     const [err, column] = location.hash.split('#')
 
     if (column == 'Clientes') {
-        let action = 'crearCliente' 
-
         let item = map.get(column)[1]
         let template = Object.keys(item)
         template = cleanClients(template)
 
+        let action = (method == 'post') ? 'crearCliente' : 'actualizarCliente'
+
+        factoryBody(column, action, template)
+    }
+}
+
+const factoryBody = (column,action, template)=> {
         const answers = {}
 
         for (let i = 0; i < template.length; i++) {
@@ -282,13 +287,8 @@ const setPost = () => {
             answers[template[i]] = inputItem.value
             inputItem.value = ''
         }
-
-        console.log('Answers Content', answers)
+        
         apiPost(answers, column, action)
-
-
-
-    }
 }
 
 buttonX.addEventListener('click', () => {
