@@ -6,10 +6,6 @@
     location.hash = 'Clientes'
 
     clienteTable.classList.add('active-table')
-    planTable.classList.remove('active-table');
-    suscripcionTable.classList.remove('active-table');
-    historialTable.classList.remove('active-table');
-    facturaTable.classList.remove('active-table');
 })
 
 
@@ -18,33 +14,29 @@
 clienteBtn.addEventListener('click', () => {
     clienteBtn.classList.add('active')
 
+    location.hash = 'Clientes'
+    api(getClientes, 'Clientes')
+
     planBtn.classList.remove('active')
     suscripcionBtn.classList.remove('active')
     historialBtn.classList.remove('active')
     facturaBtn.classList.remove('active')
 
 
-    clienteTable.classList.add('active-table');
-    planTable.classList.remove('active-table');
-    suscripcionTable.classList.remove('active-table');
-    historialTable.classList.remove('active-table');
-    facturaTable.classList.remove('active-table');
 })
 
 planBtn.addEventListener('click', () => {
     planBtn.classList.add('active')
+
+    location.hash = 'Planes'
+    api(getPlanes, 'Planes')
+    console.log('Location Hash', location.hash)
 
     clienteBtn.classList.remove('active')
     suscripcionBtn.classList.remove('active')
     historialBtn.classList.remove('active')
     facturaBtn.classList.remove('active')
 
-
-    planTable.classList.add('active-table');
-    clienteTable.classList.remove('active-table');
-    suscripcionTable.classList.remove('active-table');
-    historialTable.classList.remove('active-table');
-    facturaTable.classList.remove('active-table');
 })
 
 suscripcionBtn.addEventListener('click', () => {
@@ -54,13 +46,6 @@ suscripcionBtn.addEventListener('click', () => {
     clienteBtn.classList.remove('active')
     historialBtn.classList.remove('active')
     facturaBtn.classList.remove('active')
-
-
-    suscripcionTable.classList.add('active-table');
-    clienteTable.classList.remove('active-table');
-    planTable.classList.remove('active-table');
-    historialTable.classList.remove('active-table');
-    facturaTable.classList.remove('active-table');
 })
 
 historialBtn.addEventListener('click', () => {
@@ -70,13 +55,6 @@ historialBtn.addEventListener('click', () => {
     suscripcionBtn.classList.remove('active')
     clienteBtn.classList.remove('active')
     facturaBtn.classList.remove('active')
-
-
-    historialTable.classList.add('active-table');
-    clienteTable.classList.remove('active-table');
-    planTable.classList.remove('active-table');
-    suscripcionTable.classList.remove('active-table');
-    facturaTable.classList.remove('active-table');
 })
 
 facturaBtn.addEventListener('click', () => {
@@ -86,14 +64,6 @@ facturaBtn.addEventListener('click', () => {
     suscripcionBtn.classList.remove('active')
     historialBtn.classList.remove('active')
     clienteBtn.classList.remove('active')
-
-
-    facturaTable.classList.add('active-table');
-    historialTable.classList.remove('active-table');
-    clienteTable.classList.remove('active-table');
-    planTable.classList.remove('active-table');
-    suscripcionTable.classList.remove('active-table');
-
 })
 
 
@@ -144,7 +114,7 @@ btnSediento.addEventListener('click', (event) => {
 
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
 })
 
 
@@ -173,7 +143,7 @@ btnRefrescado.addEventListener('click', (event) => {
 
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
 })
 
 btnHidratado.addEventListener('click', (event) => {
@@ -201,7 +171,7 @@ btnHidratado.addEventListener('click', (event) => {
 
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
 })
 
 
@@ -216,29 +186,29 @@ navTwoLogo.addEventListener('click', () => {
 })
 
 //Boton que genera la nueva factura
-btnCrearFactura.addEventListener('click',()=>{
+btnCrearFactura.addEventListener('click', () => {
     payContainer.style.display = 'none'
     payLoading.style.display = 'grid'
     lucky.classList.add('active')
 })
 
 //Animacion de los elementos dentro del spinner
-lucky.addEventListener('animationend',()=>{
+lucky.addEventListener('animationend', () => {
     checkSpinner.style.display = 'block'
     textSpinner.style.display = 'block'
     buttonSpinner.style.display = 'inline-block'
 })
 
 //Boton que vuelve al inicio dentro del spinner
-buttonSpinner.addEventListener('click',()=>{
-    payLoading.style.display='none'
+buttonSpinner.addEventListener('click', () => {
+    payLoading.style.display = 'none'
     checkSpinner.style.display = 'none'
     textSpinner.style.display = 'none'
     buttonSpinner.style.display = 'none'
     paymentSection.style.display = 'none'
 
-    layoutSection.style.display ='flex'
-    planSection.style.display ='flex'
+    layoutSection.style.display = 'flex'
+    planSection.style.display = 'flex'
 })
 
 

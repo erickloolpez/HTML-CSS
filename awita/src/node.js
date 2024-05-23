@@ -17,10 +17,6 @@ const loginPicture = document.querySelector('.main-menu--circle');
 
 /*Variables for change the table*/
 const clienteTable = document.getElementById('clienteTable');
-const planTable = document.getElementById('planTable');
-const suscripcionTable = document.getElementById('suscripcionTable');
-const historialTable = document.getElementById('historialTable');
-const facturaTable = document.getElementById('facturaTable');
 
 //Botones del aside de la seccion del ADMIN
 const clienteBtn = document.querySelector('.btnClientes');
@@ -87,4 +83,8 @@ const inputPlanId = document.getElementById('planID')
 const inputPlanNombre = document.getElementById('planNombre')
 const inputPlanTipo = document.getElementById('planTipo')
 const inputPlanPrecio = document.getElementById('planPrecio')
+
+//Direcciones REST
+let getClientes = 'http://localhost:9099/api/clientes/listarClientes'
+let getPlanes = 'http://localhost:9099/api/planes/listarPlanes'
 

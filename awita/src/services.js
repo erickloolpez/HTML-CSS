@@ -24,19 +24,19 @@ const api = async (url, column) => {
         .then((res) => res.json())
         .then((data) => {
 
-            console.log(`API ${column}`, data)
-
             map.set(column, data)
-            console.log('Mi mapa', map)
             let template = Object.keys(map.get(`${column}`)[0])
-            console.log('Keys del Objeto', template)
-
 
             //eliminacion de columnas extras
             switch (column) {
                 case 'Clientes':
                     template = cleanClients(template)
                     factoryParts(template, data, column)
+                    break
+                case 'Planes':
+                    template = cleanPlans(template)
+                    factoryParts(template, data, column)
+                    break
             }
 
         })
@@ -73,15 +73,31 @@ const cleanClients = (template) => {
     return template
 }
 
+const cleanPlans = (template) => {
+    let index = template.indexOf('historial_plan')
+    template.splice(index, 1)
+    index = template.indexOf('suscripcion')
+    template.splice(index, 1)
+    index = template.indexOf('creado_en')
+    template.splice(index, 1)
+
+    return template
+}
+
 const factoryParts = (template, data, column) => {
     tableHead.innerHTML = ''
     tableBody.innerHTML = ''
     let headContent
 
+    const tdInputHead = document.createElement('input')
+    tdInputHead.setAttribute('type', 'checkbox')
+
+    tableHead.appendChild(tdInputHead)
+
     template.forEach(col => {
         headContent = `<th><i class="fa-solid fa-fingerprint"></i>${col}&UpArrow;</span></th>`
 
-        tableHead += headContent
+        tableHead.innerHTML += headContent
     })
 
     data.forEach(cli => {
@@ -158,10 +174,18 @@ const handleClick = (id, column) => {
 }
 
 const factoryEntries = (column, itemFound) => {
-    if (column == 'Clientes') {
-        let template = Object.keys(itemFound)
-        template = cleanClients(template)
-        factoryOutputs(column, itemFound, template)
+    let template
+    switch (column) {
+        case 'Clientes':
+            template = Object.keys(itemFound)
+            template = cleanClients(template)
+            factoryOutputs(column, itemFound, template)
+            break
+        case 'Planes':
+            template = Object.keys(itemFound)
+            template = cleanPlans(template)
+            factoryOutputs(column, itemFound, template)
+            break
     }
 
 }
@@ -276,7 +300,7 @@ const setMethod = (method) => {
         let template = Object.keys(item)
         template = cleanClients(template)
 
-        switch(method){
+        switch (method) {
             case 'post':
                 action = 'crearCliente'
                 break
@@ -314,5 +338,4 @@ buttonX.addEventListener('click', () => {
 
 })
 
-let getClientes = 'http://localhost:9099/api/clientes/listarClientes'
 api(getClientes, 'Clientes')
