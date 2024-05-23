@@ -43,6 +43,26 @@ const api = (url, column) => {
         .catch((error) => console.log(error))
 }
 
+const apiPost = (answers,controller, action) => {
+    fetch(`http://localhost:9099/api/${controller}/${action}`, {
+        method: 'post',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(answers)
+
+    })
+        .then((res) => {
+            if (res.ok) {
+                console.log('HTTP POST request successful')
+            } else {
+                console.log('HTTP POST request unsuccessful')
+            }
+            return res
+        })
+        .catch((error) => console.log(error))
+}
+
 const cleanClients = (template) => {
     let index = template.indexOf('suscripcion')
     template.splice(index, 1)
@@ -194,6 +214,7 @@ const factoryOutputs = (column, itemFound, template) => {
 
         const inputBox = document.createElement('input')
         inputBox.setAttribute('type', 'text')
+        inputBox.setAttribute('id', `${column}_${template[i]}`)
         inputBox.value = itemFound[template[i]]
 
         box.append(h2Box, inputBox)
@@ -242,6 +263,32 @@ const handleClickNew = () => {
 
     inputScreen.style.display = 'flex'
 
+}
+
+const setPost = () => {
+    const [err, column] = location.hash.split('#')
+
+    if (column == 'Clientes') {
+        let action = 'crearCliente' 
+
+        let item = map.get(column)[1]
+        let template = Object.keys(item)
+        template = cleanClients(template)
+
+        const answers = {}
+
+        for (let i = 0; i < template.length; i++) {
+            const inputItem = document.getElementById(`${column}_${template[i]}`)
+            answers[template[i]] = inputItem.value
+            inputItem.value = ''
+        }
+
+        console.log('Answers Content', answers)
+        apiPost(answers, column, action)
+
+
+
+    }
 }
 
 buttonX.addEventListener('click', () => {
