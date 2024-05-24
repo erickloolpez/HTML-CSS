@@ -24,6 +24,8 @@ const api = async (url, column) => {
         .then((res) => res.json())
         .then((data) => {
 
+            location.hash = `${column}`
+
             map.set(column, data)
             let template = Object.keys(map.get(`${column}`)[0])
 
@@ -43,7 +45,7 @@ const api = async (url, column) => {
         .catch((error) => console.log(error))
 }
 
-const apiPost = async (answers, controller, action, method) => {
+const apiPost = async (answers, controller, action, method, uri) => {
     await fetch(`http://localhost:9099/api/${controller}/${action}`, {
         method: `${method}`,
         headers: {
@@ -55,7 +57,7 @@ const apiPost = async (answers, controller, action, method) => {
         .then((res) => {
             if (res.ok) {
                 console.log(`HTTP ${method} request successful`)
-                api(getClientes, 'Clientes')
+                api(uri, controller)
             } else {
                 console.log(`HTTP ${method} request unsuccessful`)
             }
@@ -266,15 +268,13 @@ const handleClickNew = () => {
     colsGrid.style.gridTemplateColumns = '70% 30%'
 
 
-    let itemFound = map.get(column)[1]
+    let itemFound = map.get(`${column}`)[1]
 
     Object.keys(itemFound).forEach(clave => {
         itemFound[clave] = ''
     });
 
-    let template = Object.keys(itemFound)
-    template = cleanClients(template)
-    factoryOutputs(column, itemFound, template)
+    factoryEntries(column, itemFound)
 
 
     //botones New y X
@@ -295,29 +295,41 @@ const setMethod = (method) => {
     const [err, column] = location.hash.split('#')
 
     if (column == 'Clientes') {
-        let action
         let item = map.get(column)[1]
         let template = Object.keys(item)
         template = cleanClients(template)
 
-        switch (method) {
-            case 'post':
-                action = 'crearCliente'
-                break
-            case 'put':
-                action = 'actualizarCliente'
-                break
-            case 'delete':
-                action = 'eliminarCliente'
-                break
-        }
+        let action = setAction(method,column)
 
+        factoryBody(column, action, template, method, getClientes)
+    }else if(column == 'Planes'){
+        let item = map.get(column)[1]
+        let template = Object.keys(item)
+        template = cleanPlans(template)
 
-        factoryBody(column, action, template, method)
+        let action = setAction(method,column)
+
+        factoryBody(column, action, template, method, getPlanes)
     }
 }
 
-const factoryBody = (column, action, template, method) => {
+const setAction = (method, column) => {
+    let action
+    switch (method) {
+        case 'post':
+            action = `crear${column}`
+            break
+        case 'put':
+            action = `actualizar${column}`
+            break
+        case 'delete':
+            action = `eliminar${column}`
+            break
+    }
+    return action
+}
+
+const factoryBody = (column, action, template, method,uri) => {
     const answers = {}
 
     for (let i = 0; i < template.length; i++) {
@@ -326,7 +338,7 @@ const factoryBody = (column, action, template, method) => {
         inputItem.value = ''
     }
 
-    apiPost(answers, column, action, method)
+    apiPost(answers, column, action, method, uri)
 }
 
 buttonX.addEventListener('click', () => {

@@ -14,7 +14,6 @@
 clienteBtn.addEventListener('click', () => {
     clienteBtn.classList.add('active')
 
-    location.hash = 'Clientes'
     api(getClientes, 'Clientes')
 
     planBtn.classList.remove('active')
@@ -28,9 +27,7 @@ clienteBtn.addEventListener('click', () => {
 planBtn.addEventListener('click', () => {
     planBtn.classList.add('active')
 
-    location.hash = 'Planes'
     api(getPlanes, 'Planes')
-    console.log('Location Hash', location.hash)
 
     clienteBtn.classList.remove('active')
     suscripcionBtn.classList.remove('active')
@@ -218,16 +215,11 @@ adminLogo.addEventListener('click', () => {
     planSection.style.display = 'flex';
     asideSection.style.display = 'none';
     clienteTable.classList.remove('active-table');
-    planTable.classList.add('active-table');
-    suscripcionTable.classList.add('active-table');
-    historialTable.classList.add('active-table');
-    facturaTable.classList.add('active-table');
 })
 
 
 //Todo lo que tiene que ver con el window
 window.addEventListener('load', () => {
-    location.hash = ''
     paymentSection.style.display = 'none'
 })
 
