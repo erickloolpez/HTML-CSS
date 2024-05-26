@@ -39,6 +39,8 @@ planBtn.addEventListener('click', () => {
 suscripcionBtn.addEventListener('click', () => {
     suscripcionBtn.classList.add('active')
 
+    api(getSuscripciones, 'Suscripciones')
+
     planBtn.classList.remove('active')
     clienteBtn.classList.remove('active')
     historialBtn.classList.remove('active')
@@ -48,6 +50,8 @@ suscripcionBtn.addEventListener('click', () => {
 historialBtn.addEventListener('click', () => {
     historialBtn.classList.add('active')
 
+    api(getHistorial, 'Historial')
+
     planBtn.classList.remove('active')
     suscripcionBtn.classList.remove('active')
     clienteBtn.classList.remove('active')
@@ -56,6 +60,8 @@ historialBtn.addEventListener('click', () => {
 
 facturaBtn.addEventListener('click', () => {
     facturaBtn.classList.add('active')
+
+    api(getFactura,'Factura')
 
     planBtn.classList.remove('active')
     suscripcionBtn.classList.remove('active')

@@ -15,9 +15,9 @@ const api = async (url, column) => {
     await fetch(url)
         .then((res) => {
             if (res.ok) {
-                console.log(`HTTP ${column}  request successful`)
+                console.log(`HTTP ${column}  request GET successful`)
             } else {
-                consol.log(`HTTP ${column}  request unsuccessful`)
+                consol.log(`HTTP ${column}  request GET unsuccessful`)
             }
             return res
         })
@@ -37,6 +37,18 @@ const api = async (url, column) => {
                     break
                 case 'Planes':
                     template = cleanPlans(template)
+                    factoryParts(template, data, column)
+                    break
+                case 'Suscripciones':
+                    template = cleanSuscripciones(template, 0)
+                    factoryParts(template, data, column)
+                    break
+                case 'Historial':
+                    template = cleanHistorial(template)
+                    factoryParts(template, data, column)
+                    break
+                case 'Factura':
+                    template = cleanFactura(template)
                     factoryParts(template, data, column)
                     break
             }
@@ -82,6 +94,50 @@ const cleanPlans = (template) => {
     template.splice(index, 1)
     index = template.indexOf('creado_en')
     template.splice(index, 1)
+
+    return template
+}
+
+const cleanSuscripciones = (template, show) => {
+    let index = template.indexOf('factura')
+    template.splice(index, 1)
+    index = template.indexOf('historial_plan')
+    template.splice(index, 1)
+    index = template.indexOf('planes')
+    template.splice(index, 1)
+    index = template.indexOf('cliente')
+    template.splice(index, 1)
+    index = template.indexOf('creado_en')
+    template.splice(index, 1)
+
+    if (show == 1) {
+        index = template.indexOf('fecha_suscripcion')
+        template.splice(index, 1)
+
+        return template
+    }else{
+        return template
+    }
+}
+
+const cleanHistorial = (template)=>{
+    let index = template.indexOf('creado_en')
+    template.splice(index,1)
+    index = template.indexOf('factura')
+    template.splice(index,1)
+    index = template.indexOf('suscripcion')
+    template.splice(index, 1)
+    index = template.indexOf('planes')
+    template.splice(index,1)
+
+    return template
+}
+
+const cleanFactura = (template)=>{
+    let index = template.indexOf('historial_plan')
+    template.splice(index,1 )
+    index = template.indexOf('suscripcion')
+    template.splice(index,1)
 
     return template
 }
@@ -188,6 +244,20 @@ const factoryEntries = (column, itemFound) => {
             template = cleanPlans(template)
             factoryOutputs(column, itemFound, template)
             break
+        case 'Suscripciones':
+            template = Object.keys(itemFound)
+            template = cleanSuscripciones(template,1)
+            factoryOutputs(column, itemFound, template)
+            break
+        case 'Historial': 
+            template = Object.keys(itemFound)
+            template = cleanHistorial(template)
+            factoryOutputs(column, itemFound, template)
+            break
+        case 'Factura':
+            template = Object.keys(itemFound)
+            template = cleanFactura(template)
+            factoryOutputs(column,itemFound,template)
     }
 
 }
@@ -197,10 +267,37 @@ const factoryOutputs = (column, itemFound, template) => {
     inputHeader.innerHTML = ''
 
     const img = document.createElement('img')
-    img.setAttribute(
-        'src',
-        './assets/img/usersIcons.png'
-    )
+
+    switch (column) {
+        case 'Clientes':
+            img.setAttribute(
+                'src',
+                './assets/img/usersIcons.png'
+            )
+            break
+        case 'Planes':
+            img.setAttribute(
+                'src',
+                './assets/img/planesIcon.png'
+            )
+            break
+        case 'Suscripciones':
+            img.setAttribute(
+                'src',
+                './assets/img/subscriptionIcon.png'
+            )
+            break
+        case 'Historial':
+            img.setAttribute(
+                'src',
+                './assets/img/historialIcon.png'
+            )
+        case 'Factura':
+            img.setAttribute(
+                'src',
+                './assets/img/facturaIcon.png'
+            )
+    }
     img.setAttribute('alt', `${column}_icon`)
 
     const inputHeaderId = document.createElement('div')
@@ -299,17 +396,41 @@ const setMethod = (method) => {
         let template = Object.keys(item)
         template = cleanClients(template)
 
-        let action = setAction(method,column)
+        let action = setAction(method, column)
 
         factoryBody(column, action, template, method, getClientes)
-    }else if(column == 'Planes'){
+    } else if (column == 'Planes') {
         let item = map.get(column)[1]
         let template = Object.keys(item)
         template = cleanPlans(template)
 
-        let action = setAction(method,column)
+        let action = setAction(method, column)
 
         factoryBody(column, action, template, method, getPlanes)
+    } else if (column == 'Suscripciones') {
+        let item = map.get(column)[1]
+        let template = Object.keys(item)
+        template = cleanSuscripciones(template, 1)
+
+        let action = setAction(method, column)
+
+        factoryBody(column, action, template, method, getSuscripciones)
+    } else if(column == 'Historial'){
+        let item = map.get(column)[1]
+        let template = Object.keys(item)
+        template = cleanHistorial(template)
+
+        let action = setAction(method, column)
+
+        factoryBody(column, action, template, method, getHistorial)
+    }else{
+        let item = map.get(column)[1]
+        let template = Object.keys(item)
+        template = cleanFactura(template)
+
+        let action = setAction(method, column)
+
+        factoryBody(column, action, template, method, getFactura)
     }
 }
 
@@ -329,7 +450,7 @@ const setAction = (method, column) => {
     return action
 }
 
-const factoryBody = (column, action, template, method,uri) => {
+const factoryBody = (column, action, template, method, uri) => {
     const answers = {}
 
     for (let i = 0; i < template.length; i++) {

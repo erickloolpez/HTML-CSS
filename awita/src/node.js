@@ -87,4 +87,7 @@ const inputPlanPrecio = document.getElementById('planPrecio')
 //Direcciones REST
 let getClientes = 'http://localhost:9099/api/clientes/listarClientes'
 let getPlanes = 'http://localhost:9099/api/planes/listarPlanes'
+let getSuscripciones = 'http://localhost:9099/api/suscripciones/listarSuscripciones'
+let getHistorial = 'http://localhost:9099/api/historial/listarHistorial'
+let getFactura = 'http://localhost:9099/api/factura/listarFactura'
 
