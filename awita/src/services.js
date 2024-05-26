@@ -24,6 +24,7 @@ const api = async (url, column) => {
         .then((res) => res.json())
         .then((data) => {
 
+
             location.hash = `${column}`
 
             map.set(column, data)
@@ -115,29 +116,29 @@ const cleanSuscripciones = (template, show) => {
         template.splice(index, 1)
 
         return template
-    }else{
+    } else {
         return template
     }
 }
 
-const cleanHistorial = (template)=>{
+const cleanHistorial = (template) => {
     let index = template.indexOf('creado_en')
-    template.splice(index,1)
+    template.splice(index, 1)
     index = template.indexOf('factura')
-    template.splice(index,1)
+    template.splice(index, 1)
     index = template.indexOf('suscripcion')
     template.splice(index, 1)
     index = template.indexOf('planes')
-    template.splice(index,1)
+    template.splice(index, 1)
 
     return template
 }
 
-const cleanFactura = (template)=>{
+const cleanFactura = (template) => {
     let index = template.indexOf('historial_plan')
-    template.splice(index,1 )
+    template.splice(index, 1)
     index = template.indexOf('suscripcion')
-    template.splice(index,1)
+    template.splice(index, 1)
 
     return template
 }
@@ -160,31 +161,33 @@ const factoryParts = (template, data, column) => {
         tableHead.innerHTML += headContent
     })
 
-    data.forEach(cli => {
-        const tr = document.createElement('tr')
-        tr.addEventListener('click', () => {
-            handleClick(cli.id, column)
-        })
+    // data.forEach(cli => {
+    //     const tr = document.createElement('tr')
+    //     tr.addEventListener('click', () => {
+    //         handleClick(cli.id, column)
+    //     })
 
-        const tdInputContainer = document.createElement('td')
-        const tdInput = document.createElement('input')
-        tdInput.setAttribute('id', cli.id)
-        tdInput.setAttribute('name', column)
-        tdInput.setAttribute('type', 'checkbox')
-        tdInputContainer.appendChild(tdInput)
+    //     const tdInputContainer = document.createElement('td')
+    //     const tdInput = document.createElement('input')
+    //     tdInput.setAttribute('id', cli.id)
+    //     tdInput.setAttribute('name', column)
+    //     tdInput.setAttribute('type', 'checkbox')
+    //     tdInputContainer.appendChild(tdInput)
 
-        tr.appendChild(tdInputContainer)
+    //     tr.appendChild(tdInputContainer)
 
-        for (let i = 0; i < template.length; i++) {
-            const td = document.createElement('td')
-            const tdText = document.createTextNode(cli[template[i]])
+    //     for (let i = 0; i < template.length; i++) {
+    //         const td = document.createElement('td')
+    //         const tdText = document.createTextNode(cli[template[i]])
 
-            td.appendChild(tdText)
-            tr.appendChild(td)
-        }
+    //         td.appendChild(tdText)
+    //         tr.appendChild(td)
+    //     }
 
-        tableBody.appendChild(tr)
-    })
+    //     tableBody.appendChild(tr)
+    // })
+
+    changePage(1,column,template)
 }
 
 const handleClick = (id, column) => {
@@ -250,10 +253,10 @@ const factoryEntries = (column, itemFound) => {
             break
         case 'Suscripciones':
             template = Object.keys(itemFound)
-            template = cleanSuscripciones(template,1)
+            template = cleanSuscripciones(template, 1)
             factoryOutputs(column, itemFound, template)
             break
-        case 'Historial': 
+        case 'Historial':
             template = Object.keys(itemFound)
             template = cleanHistorial(template)
             factoryOutputs(column, itemFound, template)
@@ -261,7 +264,7 @@ const factoryEntries = (column, itemFound) => {
         case 'Factura':
             template = Object.keys(itemFound)
             template = cleanFactura(template)
-            factoryOutputs(column,itemFound,template)
+            factoryOutputs(column, itemFound, template)
     }
 
 }
@@ -419,7 +422,7 @@ const setMethod = (method) => {
         let action = setAction(method, column)
 
         factoryBody(column, action, template, method, getSuscripciones)
-    } else if(column == 'Historial'){
+    } else if (column == 'Historial') {
         let item = map.get(column)[1]
         let template = Object.keys(item)
         template = cleanHistorial(template)
@@ -427,7 +430,7 @@ const setMethod = (method) => {
         let action = setAction(method, column)
 
         factoryBody(column, action, template, method, getHistorial)
-    }else{
+    } else {
         let item = map.get(column)[1]
         let template = Object.keys(item)
         template = cleanFactura(template)
@@ -476,3 +479,91 @@ buttonX.addEventListener('click', () => {
 })
 
 api(getClientes, 'Clientes')
+
+
+
+//Pagination
+var current_page = 1;
+var records_per_page = 20;
+
+
+function prevPage() {
+    const [err, column] = location.hash.split('#')
+    let template = Object.keys(map.get(`${column}`)[0])
+    template = cleanClients(template)
+
+    if (current_page > 1) {
+        current_page--;
+        changePage(current_page,column,template);
+    }
+}
+
+function nextPage() {
+    const [err, column] = location.hash.split('#')
+    let template = Object.keys(map.get(`${column}`)[0])
+    template = cleanClients(template)
+
+    if (current_page < numPages(column)) {
+        current_page++;
+        changePage(current_page, column, template);
+    }
+}
+
+function changePage(page, column, template) {
+    var btn_next = document.getElementById("btn_next");
+    var btn_prev = document.getElementById("btn_prev");
+    var page_span = document.getElementById("page");
+
+    // Validate page
+    if (page < 1) page = 1;
+    if (page > numPages(column)) page = numPages(column);
+
+    tableBody.innerHTML =''
+
+    for (var i = (page - 1) * records_per_page; i < (page * records_per_page); i++) {
+
+        let cli = map.get(`${column}`)[i]
+
+        const tr = document.createElement('tr')
+        tr.addEventListener('click', () => {
+            handleClick(cli.id, column)
+        })
+
+        const tdInputContainer = document.createElement('td')
+        const tdInput = document.createElement('input')
+        tdInput.setAttribute('id', cli.id)
+        tdInput.setAttribute('name', column)
+        tdInput.setAttribute('type', 'checkbox')
+        tdInputContainer.appendChild(tdInput)
+
+        tr.appendChild(tdInputContainer)
+
+        for (let i = 0; i < template.length; i++) {
+            const td = document.createElement('td')
+            const tdText = document.createTextNode(cli[template[i]])
+
+            td.appendChild(tdText)
+            tr.appendChild(td)
+        }
+
+        tableBody.appendChild(tr)
+    }
+    page_span.innerHTML = page;
+
+    if (page == 1) {
+        btn_prev.style.visibility = "hidden";
+    } else {
+        btn_prev.style.visibility = "visible";
+    }
+
+    if (page == numPages(column)) {
+        btn_next.style.visibility = "hidden";
+    } else {
+        btn_next.style.visibility = "visible";
+    }
+}
+
+function numPages(column) {
+    return Math.ceil(map.get(column).length / records_per_page);
+}
+
