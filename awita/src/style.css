@@ -706,7 +706,7 @@ footer {
     height: calc(140vh - 70.13px);
     margin: 0 auto;
     gap: 1.8rem;
-    grid-template-columns: 12rem auto;
+    grid-template-columns: 16rem auto;
     grid-template-rows: 100%;
     background-color: #c9d6ff;
     background: linear-gradient(to right, #e2e2e2, #c9d6ff);
@@ -1005,7 +1005,9 @@ aside {
 
 .tableContainer{
     width: 100%;
-    height: 100%;
+    height: 92%;
+    align-self: end;
+    background-color: white;
 }
 
 .table-header{
@@ -1045,12 +1047,19 @@ aside {
 
 /*Botones de New y X*/
 
-#buttonX{
+.buttonX{
     display: none;
+    background-color: red;
+    border: none;
+    border-radius:4px;
 }
 
-#buttonNew{
+.buttonNew{
     width: 100%;
+    background-color: #1D417B;
+    color: white;
+    border: none;
+    border-radius: 4px;
 }
 
 
@@ -1165,7 +1174,7 @@ aside {
 
 .table-wrap{
     width: 100%;
-    height: 87%;
+    height: 92%;
     border: 4px solid #e8e8e8;
     overflow: auto;
 }
@@ -1234,12 +1243,15 @@ tbody tr:hover {
     }
 
 .sectionCharts {
-    display: flex;
+    display: grid;
+    grid-template-columns: 30% 66%;
+    grid-template-rows: 100%;
     height: 30%;
+    gap: 1.6rem;
 }
 
 .containerCharts {
-    width: 50%;
+    width: 100%;
     height:100%;
     position: relative;
 }
@@ -1277,6 +1289,7 @@ tbody tr:hover {
     height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .chart-container{
@@ -1284,6 +1297,8 @@ tbody tr:hover {
     height:100%;
     display: flex;
     justify-content: center;
+    background-color: white;
+    border-radius: 6px;
 }
 
 

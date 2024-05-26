@@ -6,6 +6,27 @@ const judaContent = juda.value;
 const dividerJuda = judaContent.split(',')
 
 
+const apiAnalysis = async (url, option) => {
+    await fetch(url)
+        .then((res) => {
+            if (res.ok) {
+                console.log(`HTTP sp request GET successful`)
+            } else {
+                consol.log(`HTTP sp request GET unsuccessful`)
+            }
+            return res
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            option == 1 ? addDataChart(data) : addDataPie(data)
+        })
+        .catch((error) => console.log(error))
+}
+
+apiAnalysis(getIngresosPlan, 1)
+apiAnalysis(getSuscripcionPlan, 0)
+
+
 let chartData = {
     labels: [],
     datasets: [{
@@ -125,30 +146,27 @@ function createPie(type, height = 100) {
 let myChart = createChart('bar'); // Create initial chart with default height = 400
 let myPie = createPie('pie');
 
-addDataChart(divider);
 addDataPie(dividerJuda);
 
 function addDataChart(listBungee) {
-    listBungee.forEach((bungee) => {
-        const [labelInput, dataInput] = bungee.split('-');
-        chartData.labels.push(labelInput);
+
+    listBungee.forEach((item) => {
+        chartData.labels.push(item.nombre)
         chartData.datasets.forEach((dataset) => {
-            dataset.data.push(dataInput);
+            dataset.data.push(item.Ingresos_Totales)
         })
     })
-    myChart.update();
+    myChart.update()
 }
 
 function addDataPie(halfBungee) {
-    halfBungee.forEach((bungee) => {
-        const [labelInput, dataInput] = bungee.split('-');
-        pieData.labels.push(labelInput)
+    halfBungee.forEach((item) => {
+        pieData.labels.push(item.Nombre_del_plan)
         pieData.datasets.forEach((dataset) => {
-            dataset.data.push(dataInput)
+            dataset.data.push(item.Número_de_suscripciones)
         })
-
     })
-    myPie.update();
+    myChart.update()
 }
 
 function addData(event) {

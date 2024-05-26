@@ -147,13 +147,15 @@ const factoryParts = (template, data, column) => {
     tableBody.innerHTML = ''
     let headContent
 
+    const thInput = document.createElement('th')
     const tdInputHead = document.createElement('input')
     tdInputHead.setAttribute('type', 'checkbox')
+    thInput.appendChild(tdInputHead)
 
-    tableHead.appendChild(tdInputHead)
+    tableHead.appendChild(thInput)
 
     template.forEach(col => {
-        headContent = `<th><i class="fa-solid fa-fingerprint"></i>${col}&UpArrow;</span></th>`
+        headContent = `<th>${col}</th>`
 
         tableHead.innerHTML += headContent
     })
@@ -164,12 +166,14 @@ const factoryParts = (template, data, column) => {
             handleClick(cli.id, column)
         })
 
+        const tdInputContainer = document.createElement('td')
         const tdInput = document.createElement('input')
         tdInput.setAttribute('id', cli.id)
         tdInput.setAttribute('name', column)
         tdInput.setAttribute('type', 'checkbox')
+        tdInputContainer.appendChild(tdInput)
 
-        tr.appendChild(tdInput)
+        tr.appendChild(tdInputContainer)
 
         for (let i = 0; i < template.length; i++) {
             const td = document.createElement('td')

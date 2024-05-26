@@ -90,4 +90,6 @@ let getPlanes = 'http://localhost:9099/api/planes/listarPlanes'
 let getSuscripciones = 'http://localhost:9099/api/suscripciones/listarSuscripciones'
 let getHistorial = 'http://localhost:9099/api/historial/listarHistorial'
 let getFactura = 'http://localhost:9099/api/factura/listarFactura'
+let getIngresosPlan = 'http://localhost:9099/api/sp/ingresosPlan'
+let getSuscripcionPlan = 'http://localhost:9099/api/sp/suscripcionesPlan'
 
