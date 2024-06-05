@@ -61,7 +61,7 @@ historialBtn.addEventListener('click', () => {
 facturaBtn.addEventListener('click', () => {
     facturaBtn.classList.add('active')
 
-    api(getFactura,'Factura')
+    api(getFactura, 'Factura')
 
     planBtn.classList.remove('active')
     suscripcionBtn.classList.remove('active')
@@ -73,7 +73,6 @@ facturaBtn.addEventListener('click', () => {
 //Switch de la seccion de planes
 switchButton.addEventListener('change', () => {
     if (switchButton.checked) {
-        console.log('hola')
         sedientoPrice.innerHTML = '$200'
         refrescadoPrice.innerHTML = '$400'
         hidratadoPrice.innerHTML = '$600'
@@ -221,6 +220,22 @@ adminLogo.addEventListener('click', () => {
     planSection.style.display = 'flex';
     asideSection.style.display = 'none';
     clienteTable.classList.remove('active-table');
+})
+
+//Boton que crea al usuario o le asigna la suscripcion 
+btnCrearFactura.addEventListener('click', () => {
+    let nombre = nombreCliente.value
+    let apellido = apellidoCliente.value
+    let email = emailCliente.value
+    let cedula = cedulaCliente.value
+
+    let answer = {}
+    answer['id'] = cedula
+    answer['nombre'] = nombre
+    answer['apellido'] = apellido
+    answer['email'] = email
+
+    apiGetID(`${getClientesId}/${answer.id}`, 'Clientes', answer)
 })
 
 

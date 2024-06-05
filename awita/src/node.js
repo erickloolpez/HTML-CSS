@@ -84,7 +84,7 @@ const inputPlanNombre = document.getElementById('planNombre')
 const inputPlanTipo = document.getElementById('planTipo')
 const inputPlanPrecio = document.getElementById('planPrecio')
 
-//Direcciones REST
+//Direcciones REST GET
 let getClientes = 'http://localhost:9099/api/clientes/listarClientes'
 let getPlanes = 'http://localhost:9099/api/planes/listarPlanes'
 let getSuscripciones = 'http://localhost:9099/api/suscripciones/listarSuscripciones'
@@ -93,3 +93,5 @@ let getFactura = 'http://localhost:9099/api/factura/listarFactura'
 let getIngresosPlan = 'http://localhost:9099/api/sp/ingresosPlan'
 let getSuscripcionPlan = 'http://localhost:9099/api/sp/suscripcionesPlan'
 
+//Direcciones REST GET ID
+let getClientesId ='http://localhost:9099/api/clientes/leerID/'

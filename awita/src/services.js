@@ -11,13 +11,54 @@ const buttonX = document.querySelector('.buttonX')
 const inputScreen = document.querySelector('.input')
 let map = new Map()
 
+const apiGetID = async (url, column, answer) => {
+    await fetch(url)
+        .then((res) => {
+            if (res.ok) {
+                console.log(`HTTP ${column}  request GET ID successful`)
+            } else {
+                console.log(`HTTP ${column}  request GET ID unsuccessful`)
+            }
+            return res
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            if(data){
+                console.log('El usuario ya existe')
+            }else{
+                console.log('Enviando Cliente apiPostCliente', answer)
+                apiPostCliente(answer)
+            }
+        })
+}
+
+const apiPostCliente = async (data) => {
+    await fetch(`http://localhost:9099/api/clientes/crearClientes`, {
+        method: `post`,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+
+    })
+        .then((res) => {
+            if (res.ok) {
+                console.log(`HTTP post Clientes request successful`)
+            } else {
+                console.log(`HTTP post Clientes request unsuccessful`)
+            }
+            return res
+        })
+        .catch((error) => console.log(error))
+}
+
 const api = async (url, column) => {
     await fetch(url)
         .then((res) => {
             if (res.ok) {
                 console.log(`HTTP ${column}  request GET successful`)
             } else {
-                consol.log(`HTTP ${column}  request GET unsuccessful`)
+                console.log(`HTTP ${column}  request GET unsuccessful`)
             }
             return res
         })
@@ -160,34 +201,7 @@ const factoryParts = (template, data, column) => {
 
         tableHead.innerHTML += headContent
     })
-
-    // data.forEach(cli => {
-    //     const tr = document.createElement('tr')
-    //     tr.addEventListener('click', () => {
-    //         handleClick(cli.id, column)
-    //     })
-
-    //     const tdInputContainer = document.createElement('td')
-    //     const tdInput = document.createElement('input')
-    //     tdInput.setAttribute('id', cli.id)
-    //     tdInput.setAttribute('name', column)
-    //     tdInput.setAttribute('type', 'checkbox')
-    //     tdInputContainer.appendChild(tdInput)
-
-    //     tr.appendChild(tdInputContainer)
-
-    //     for (let i = 0; i < template.length; i++) {
-    //         const td = document.createElement('td')
-    //         const tdText = document.createTextNode(cli[template[i]])
-
-    //         td.appendChild(tdText)
-    //         tr.appendChild(td)
-    //     }
-
-    //     tableBody.appendChild(tr)
-    // })
-
-    changePage(1,column,template)
+    changePage(1, column, template)
 }
 
 const handleClick = (id, column) => {
@@ -494,7 +508,7 @@ function prevPage() {
 
     if (current_page > 1) {
         current_page--;
-        changePage(current_page,column,template);
+        changePage(current_page, column, template);
     }
 }
 
@@ -518,7 +532,7 @@ function changePage(page, column, template) {
     if (page < 1) page = 1;
     if (page > numPages(column)) page = numPages(column);
 
-    tableBody.innerHTML =''
+    tableBody.innerHTML = ''
 
     for (var i = (page - 1) * records_per_page; i < (page * records_per_page); i++) {
 
