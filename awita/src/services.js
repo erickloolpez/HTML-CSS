@@ -11,7 +11,7 @@ const buttonX = document.querySelector('.buttonX')
 const inputScreen = document.querySelector('.input')
 let map = new Map()
 
-const apiGetID = async (url, column, answer) => {
+const apiGetID = async (url, column, answer, plan) => {
     await fetch(url)
         .then((res) => {
             if (res.ok) {
@@ -23,16 +23,21 @@ const apiGetID = async (url, column, answer) => {
         })
         .then((res) => res.json())
         .then((data) => {
-            if(data){
+            let newPlan = {}
+            newPlan['plan_id'] = plan
+            newPlan['cliente_id'] = answer.id
+            console.log('Nuevo Plan:', newPlan)
+            if (data) {
                 console.log('El usuario ya existe')
-            }else{
+                apiPost(newPlan, 'Suscripciones', 'crearSuscripciones', 'post', getSuscripciones)
+            } else {
                 console.log('Enviando Cliente apiPostCliente', answer)
-                apiPostCliente(answer)
+                apiPostCliente(answer,plan)
             }
         })
 }
 
-const apiPostCliente = async (data) => {
+const apiPostCliente = async (data,plan) => {
     await fetch(`http://localhost:9099/api/clientes/crearClientes`, {
         method: `post`,
         headers: {
@@ -44,6 +49,8 @@ const apiPostCliente = async (data) => {
         .then((res) => {
             if (res.ok) {
                 console.log(`HTTP post Clientes request successful`)
+                apiGetID(`${getClientes}/${data.id}`,'Clientes',data,plan)
+                // api(getClientes, 'Clientes')
             } else {
                 console.log(`HTTP post Clientes request unsuccessful`)
             }
@@ -70,28 +77,29 @@ const api = async (url, column) => {
 
             map.set(column, data)
             let template = Object.keys(map.get(`${column}`)[0])
+            let ourData = map.get(column)
 
             //eliminacion de columnas extras
             switch (column) {
                 case 'Clientes':
                     template = cleanClients(template)
-                    factoryParts(template, data, column)
+                    factoryParts(template, ourData, column)
                     break
                 case 'Planes':
                     template = cleanPlans(template)
-                    factoryParts(template, data, column)
+                    factoryParts(template, ourData, column)
                     break
                 case 'Suscripciones':
                     template = cleanSuscripciones(template, 0)
-                    factoryParts(template, data, column)
+                    factoryParts(template, ourData, column)
                     break
                 case 'Historial':
                     template = cleanHistorial(template)
-                    factoryParts(template, data, column)
+                    factoryParts(template, ourData, column)
                     break
                 case 'Factura':
                     template = cleanFactura(template)
-                    factoryParts(template, data, column)
+                    factoryParts(template, ourData, column)
                     break
             }
 
@@ -186,8 +194,7 @@ const cleanFactura = (template) => {
 
 const factoryParts = (template, data, column) => {
     tableHead.innerHTML = ''
-    tableBody.innerHTML = ''
-    let headContent
+    let headContent = ''
 
     const thInput = document.createElement('th')
     const tdInputHead = document.createElement('input')
@@ -201,7 +208,7 @@ const factoryParts = (template, data, column) => {
 
         tableHead.innerHTML += headContent
     })
-    changePage(1, column, template)
+    changePage(1, column, template, data)
 }
 
 const handleClick = (id, column) => {
@@ -492,9 +499,6 @@ buttonX.addEventListener('click', () => {
 
 })
 
-api(getClientes, 'Clientes')
-
-
 
 //Pagination
 var current_page = 1;
@@ -503,27 +507,63 @@ var records_per_page = 20;
 
 function prevPage() {
     const [err, column] = location.hash.split('#')
+    let data = map.get(column)
     let template = Object.keys(map.get(`${column}`)[0])
-    template = cleanClients(template)
+
+    switch (column) {
+        case 'Clientes':
+            template = cleanClients(template)
+            break
+        case 'Planes':
+            template = cleanPlans(template)
+            break
+        case 'Suscripciones':
+            template = cleanSuscripciones(template, 0)
+            break
+        case 'Historial':
+            template = cleanHistorial(template)
+            break
+        case 'Factura':
+            template = cleanFactura(template)
+            break
+    }
 
     if (current_page > 1) {
         current_page--;
-        changePage(current_page, column, template);
+        changePage(current_page, column, template, data);
     }
 }
 
 function nextPage() {
     const [err, column] = location.hash.split('#')
+    let data = map.get(column)
     let template = Object.keys(map.get(`${column}`)[0])
-    template = cleanClients(template)
+
+    switch (column) {
+        case 'Clientes':
+            template = cleanClients(template)
+            break
+        case 'Planes':
+            template = cleanPlans(template)
+            break
+        case 'Suscripciones':
+            template = cleanSuscripciones(template, 0)
+            break
+        case 'Historial':
+            template = cleanHistorial(template)
+            break
+        case 'Factura':
+            template = cleanFactura(template)
+            break
+    }
 
     if (current_page < numPages(column)) {
         current_page++;
-        changePage(current_page, column, template);
+        changePage(current_page, column, template, data);
     }
 }
 
-function changePage(page, column, template) {
+function changePage(page, column, template, data) {
     var btn_next = document.getElementById("btn_next");
     var btn_prev = document.getElementById("btn_prev");
     var page_span = document.getElementById("page");
@@ -535,32 +575,34 @@ function changePage(page, column, template) {
     tableBody.innerHTML = ''
 
     for (var i = (page - 1) * records_per_page; i < (page * records_per_page); i++) {
+        if (i < data.length) {
+            let cli = data[i]
 
-        let cli = map.get(`${column}`)[i]
+            const tr = document.createElement('tr')
+            tr.addEventListener('click', () => {
+                handleClick(cli.id, column)
+            })
 
-        const tr = document.createElement('tr')
-        tr.addEventListener('click', () => {
-            handleClick(cli.id, column)
-        })
+            const tdInputContainer = document.createElement('td')
+            const tdInput = document.createElement('input')
+            tdInput.setAttribute('id', cli.id)
+            tdInput.setAttribute('name', column)
+            tdInput.setAttribute('type', 'checkbox')
+            tdInputContainer.appendChild(tdInput)
 
-        const tdInputContainer = document.createElement('td')
-        const tdInput = document.createElement('input')
-        tdInput.setAttribute('id', cli.id)
-        tdInput.setAttribute('name', column)
-        tdInput.setAttribute('type', 'checkbox')
-        tdInputContainer.appendChild(tdInput)
+            tr.appendChild(tdInputContainer)
 
-        tr.appendChild(tdInputContainer)
+            for (let i = 0; i < template.length; i++) {
+                const td = document.createElement('td')
+                const tdText = document.createTextNode(cli[template[i]])
 
-        for (let i = 0; i < template.length; i++) {
-            const td = document.createElement('td')
-            const tdText = document.createTextNode(cli[template[i]])
+                td.appendChild(tdText)
+                tr.appendChild(td)
+            }
 
-            td.appendChild(tdText)
-            tr.appendChild(td)
+            tableBody.appendChild(tr)
+
         }
-
-        tableBody.appendChild(tr)
     }
     page_span.innerHTML = page;
 

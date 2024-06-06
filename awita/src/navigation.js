@@ -4,6 +4,8 @@
     asideSection.style.display = 'grid';
 
     location.hash = 'Clientes'
+    api(getClientes, 'Clientes')
+
 
     clienteTable.classList.add('active-table')
 })
@@ -93,6 +95,7 @@ switchButton.addEventListener('change', () => {
 
 btnSediento.addEventListener('click', (event) => {
     event.preventDefault();
+    payContainer.style.display = 'grid'
     layoutSection.style.display = 'none'
     planSection.style.display = 'none'
     paymentSection.style.display = 'grid'
@@ -122,6 +125,7 @@ btnSediento.addEventListener('click', (event) => {
 
 btnRefrescado.addEventListener('click', (event) => {
     event.preventDefault();
+    payContainer.style.display = 'grid'
     layoutSection.style.display = 'none'
     planSection.style.display = 'none'
     paymentSection.style.display = 'grid';
@@ -150,6 +154,7 @@ btnRefrescado.addEventListener('click', (event) => {
 
 btnHidratado.addEventListener('click', (event) => {
     event.preventDefault();
+    payContainer.style.display = 'grid'
     layoutSection.style.display = 'none'
     planSection.style.display = 'none'
     paymentSection.style.display = 'grid'
@@ -182,17 +187,16 @@ navTwoLogo.addEventListener('click', () => {
     paymentSection.style.display = 'none';
     layoutSection.style.display = 'flex'
     planSection.style.display = 'flex'
+    checkSpinner.style.display = 'none'
+    textSpinner.style.display = 'none'
+    buttonSpinner.style.display = 'none'
+    paymentSection.style.display = 'none'
+    lucky.classList.remove('active')
 
     location.hash = ''
 
 })
 
-//Boton que genera la nueva factura
-btnCrearFactura.addEventListener('click', () => {
-    payContainer.style.display = 'none'
-    payLoading.style.display = 'grid'
-    lucky.classList.add('active')
-})
 
 //Animacion de los elementos dentro del spinner
 lucky.addEventListener('animationend', () => {
@@ -208,6 +212,7 @@ buttonSpinner.addEventListener('click', () => {
     textSpinner.style.display = 'none'
     buttonSpinner.style.display = 'none'
     paymentSection.style.display = 'none'
+    lucky.classList.remove('active')
 
     layoutSection.style.display = 'flex'
     planSection.style.display = 'flex'
@@ -224,10 +229,17 @@ adminLogo.addEventListener('click', () => {
 
 //Boton que crea al usuario o le asigna la suscripcion 
 btnCrearFactura.addEventListener('click', () => {
+    payContainer.style.display = 'none'
+    payLoading.style.display = 'grid'
+    lucky.classList.add('active')
+
     let nombre = nombreCliente.value
     let apellido = apellidoCliente.value
     let email = emailCliente.value
-    let cedula = cedulaCliente.value
+    let cedula = cedulaCliente.value == '' ? 'Mono' : cedulaCliente.value
+
+    const [plan, notPlan] = location.hash.split('=')
+    const [falsePlan, truePlan] = plan.split('?')
 
     let answer = {}
     answer['id'] = cedula
@@ -235,8 +247,46 @@ btnCrearFactura.addEventListener('click', () => {
     answer['apellido'] = apellido
     answer['email'] = email
 
-    apiGetID(`${getClientesId}/${answer.id}`, 'Clientes', answer)
+    apiGetID(`${getClientesId}/${answer.id}`, 'Clientes', answer,truePlan)
 })
+
+//Evento que da vida el input de busqueda
+inputTable.addEventListener('input', (event) => {
+    const [notUtil, util] = location.hash.split('#')
+
+    let data = map.get(util)
+    let filterData = data.filter((item) => item.id.toLowerCase().includes(event.target.value.toLowerCase()))
+
+    if (filterData) {
+        let template = Object.keys(map.get(util)[0])
+        let dataToUse = filterData.length > 0 ? filterData : data;
+
+        //eliminacion de columnas extras
+        switch (util) {
+            case 'Clientes':
+                template = cleanClients(template)
+                break
+            case 'Planes':
+                template = cleanPlans(template)
+                break
+            case 'Suscripciones':
+                template = cleanSuscripciones(template, 0)
+                break
+            case 'Historial':
+                template = cleanHistorial(template)
+                break
+            case 'Factura':
+                template = cleanFactura(template)
+                break
+        }
+
+        factoryParts(template, dataToUse, util)
+
+    }
+
+
+})
+
 
 
 //Todo lo que tiene que ver con el window

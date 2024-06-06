@@ -94,4 +94,5 @@ let getIngresosPlan = 'http://localhost:9099/api/sp/ingresosPlan'
 let getSuscripcionPlan = 'http://localhost:9099/api/sp/suscripcionesPlan'
 
 //Direcciones REST GET ID
+const inputTable = document.getElementById('inputTable')
 let getClientesId ='http://localhost:9099/api/clientes/leerID/'
