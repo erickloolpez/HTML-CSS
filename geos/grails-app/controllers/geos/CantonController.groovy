@@ -53,5 +53,18 @@ class CantonController {
         }
     }
 
+    def delete_ajax(){
+
+        println("Llega $params")
+
+        def canton = Canton.get(params.id)
+        println("Borrando $canton")
+        if( !canton.delete(flush: true) ){
+            render "ok"
+        }else{
+            render "error: ${canton.error()}"
+        }
+
+    }
 
 }

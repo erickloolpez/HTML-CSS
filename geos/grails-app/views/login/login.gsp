@@ -20,68 +20,68 @@
             <asset:image src="apli/imax.png" style="width:60% ;height:50%;object-fit:contain"/>
         </div>
         <div style="width:100%; height: 50%; border-bottom:4px #22252D solid; display:flex; justify-content:center;align-items: center">
-            <ul style="width:90%; height:90%; display:flex; flex-direction: column; justify-content:center;">
+            <ul style="width:80%; height:90%; display:flex; flex-direction: column; justify-content:center;">
                 <li style="display:flex; width:100%; align-items:center; gap:8px;margin-bottom:12px">
-                    <i class='fa fa-home fa-2x' style='width:10%;color:#ffffff'></i>
-                    <a style="color:white;font-weight:bold">Inicio</a>
+                    <i class='fa fa-home fa-3x' style='width:14%;color:#ffffff'></i>
+                    <a style="color:white;font-weight:bold;font-size:16px">Inicio</a>
                 </li>
                 <li style="width:100%; height:80%; margin-bottom:12px"  >
                     <div style="width:100%;display:flex; align-items:center; gap:8px">
-                        <i class='fa fa-film fa-2x' style='width:10%;color:#ffffff'></i>
-                        <a style="color:white;font-weight:bold">Peliculas</a>
+                        <i class='fa fa-film fa-3x' style='width:14%;color:#ffffff'></i>
+                        <a style="color:white;font-weight:bold; font-size:16px">Peliculas</a>
                     </div>
                     <ul style=" height:86%; display:flex; flex-direction: column; justify-content:space-around">
-                        <li style="color: white; list-style: none;margin-left:42px;">Accion</li>
-                        <li style="color:white;list-style:none;margin-left:42px">Ciencia Ficcion</li>
-                        <li style="color:white;list-style:none;margin-left:42px">Amor</li>
-                        <li style="color:white;list-style:none;margin-left:42px">Comedia</li>
-                        <li style="color:white;list-style:none;margin-left:42px">Mas</li>
+                        <li style="color: white; list-style: none;margin-left:42px;font-size:16px">Accion</li>
+                        <li style="color:white;list-style:none;margin-left:42px;font-size:16px">Ciencia Ficcion</li>
+                        <li style="color:white;list-style:none;margin-left:42px; font-size:16px">Amor</li>
+                        <li style="color:white;list-style:none;margin-left:42px; font-size:16px">Comedia</li>
+                        <li style="color:white;list-style:none;margin-left:42px; font-size:16px">Mas</li>
                     </ul>
                 </li>
-                <li style="display:flex; gap:8px">
-                    <i class='fa fa-users fa-2x' style='width:10%;color:#ffffff'></i>
-                    <p style="color:white;font-weight:bold">Comunidad</p>
+                <li style="display:flex; gap:8px; align-items:center">
+                    <i class='fa fa-users fa-3x' style='width:14%;color:#ffffff'></i>
+                    <p style="color:white;font-weight:bold; font-size:16px;margin:0;padding:0">Comunidad</p>
                 </li>
             </ul>
         </div>
         <div style="width:100%; height:30%; display:flex; justify-content:center; align-items:center;border-bottom:4px #22252D solid">
-            <ul style="width:90%; height:90%;display: flex; flex-direction:column; justify-content:space-around">
-                <li style="display:flex; gap:8px">
-                    <i class='fa fa-newspaper fa-2x' style='width:10%;color:#ffffff'></i>
-                    <p style="color:white;font-weight:bold">Noticias</p>
+            <ul style="width:80%; height:90%;display: flex; flex-direction:column; justify-content:space-around">
+                <li style="display:flex; gap:8px; align-items:center">
+                    <i class='fa fa-newspaper fa-3x' style='width:14%;color:#ffffff'></i>
+                    <p style="color:white;font-weight:bold;font-size:16px;margin:0; padding: 0">Noticias</p>
                 </li>
-                <li style="display:flex;gap: 8px">
-                    <i class='fa fa-flag fa-2x' style='width:10%;color:#ffffff'></i>
-                    <p style="color:white;font-weight:bold">Logros</p>
+                <li style="display:flex;gap: 8px;align-items:center">
+                    <i class='fa fa-flag fa-3x' style='width:14%;color:#ffffff'></i>
+                    <p style="color:white;font-weight:bold; font-size:16px;margin:0; padding:0">Logros</p>
                 </li>
-                <li style="display:flex; gap:8px">
-                    <i class='fa fa-graduation-cap fa-2x' style='width:10%;color:#ffffff'></i>
-                    <p style="color:white; font-weight:bold">VIP</p>
+                <li style="display:flex; gap:8px;align-items:center">
+                    <i class='fa fa-graduation-cap fa-3x' style='width:14%;color:#ffffff'></i>
+                    <p style="color:white; font-weight:bold;font-size:16px; margin:0; padding:0">VIP</p>
                 </li>
-                <li style="display:flex;gap:8px">
-                    <i class='fa fa-suitcase fa-2x' style='width:10%;color:#ffffff'></i>
-                    <p style="color:white;font-weight:bold">Tienda</p>
+                <li style="display:flex;gap:8px;align-items:center">
+                    <i class='fa fa-suitcase fa-3x' style='width:14%;color:#ffffff'></i>
+                    <p style="color:white;font-weight:bold;font-size:16px;margin:0;padding:0">Tienda</p>
                 </li>
             </ul>
         </div>
         <div style="width:100%; height:10%; display:flex; justify-content:center;align-items:center;" >
-            <ul style="width:90%;height:33%;">
-                <li style="display:flex; gap:8px">
-                    <i class='fa fa-wrench fa-2x' style='width:10%;color:#ffffff'></i>
-                    <p style="color:white">perro sucio</p>
+            <ul style="width:80%;height:33%;">
+                <li style="display:flex; gap:8px;align-items:center">
+                    <i class='fa fa-wrench fa-3x' style='width:14%;color:#ffffff'></i>
+                    <p style="color:white;font-size:16px;margin:0;padding:0">Configuracion</p>
                 </li>
             </ul>
         </div>
     </div>
     <div style="width:100%;height:100%; display:grid;grid-template-columns:85% 15%;grid-template-rows:100%;">
-        <div style="width:100%;height:100%; display:flex; flex-direction: column; align-items:center;">
-            <div style="width:90%; height:10%;display:flex; align-items:center">
+        <div style="width:100%;height:100%; display:flex; flex-direction: column; align-items:end;">
+            <div style="width:94%; height:10%;display:flex; align-items:center">
                 <div style="display:flex;justify-content:center; align-items:center;width:18%;height:50px; border-radius:30px;margin-left:20px;border:2px solid #0D4A83">
                     <i class='fa fa-search fa-lg' style='color:#ffffff'></i>
                     <input type="text" placeholder="Busqueda" style="margin-left:12px;width:120px;background-color:transparent;border:none; color:white;outline:none;box-shadow:none";/>
                 </div>
             </div>
-            <div style="width:90%; height:55%; display:flex;z-index:1;">
+            <div id="tableSection" style="width:94%; height:55%; display:flex;z-index:1;">
                 <div style="width:50%; height:100%">
                     <div style="width:100%; height:25%;display:flex;flex-direction: column;justify-content:end">
                         <h1 style="font-size:72px; color:white; margin:0;padding:0">WALL.E</h1>
@@ -115,14 +115,14 @@
                     <asset:image src="apli/walle.png" style="width:100% ;height:130%;object-fit:contain; mask-image:linear-gradient(black 80%, transparent)"/>
                 </div>
             </div>
-            <div style="width:100%; height:35%; display:flex; justify-content:center;z-index:2">
-                <div style="width:90%; height:100%;">
+            <div style="width:94%; height:35%; display:flex; justify-content:center;z-index:2">
+                <div style="width:100%; height:100%;">
                     <div style="width:100%; height:10%; display:flex; align-items:center; ">
                         <h2 style="color:white">Popular</h2>
                         <i class='fa fa-angle-left fa-2x' style='margin-left:20px;color:#ffffff'></i>
                         <i class='fa fa-angle-right fa-2x' style='margin-left:20px;color:#ffffff'></i>
                     </div>
-                    <div style="width:100%; height:90%;display:flex;gap:20px">
+                    <div style="width:100%; height:90%;display:flex;gap:30px">
                         <div style="width:180px; height:90%; margin-top:10px">
                             <div style="width:100%; height:90%">
                                 <asset:image src="apli/greenBook.jpg" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
@@ -274,13 +274,49 @@
     var $frm = $("#frmLogin");
     var recargar = true
 
+
     function doLogin() {
+        %{--var usuario = $("#login").val();--}%
+        %{--console.log('usuario', usuario);--}%
+        %{--if (usuario) {--}%
+        %{--$("#cargando").removeClass('hidden');//document.querySelector(#cargando").classList.remove('hidden')--}%
+        %{--$(".btn-login").replaceWith($("#cargando"));//document.querySelector('.btn-login').replaceWith(document.querySelector('#cargando'))--}%
+
+        %{--$('#tableSection').empty()--}%
+        %{--$.ajax({--}%
+        %{--type: "POST",--}%
+        %{--url: "${createLink(controller: 'provincia', action:'list')}",--}%
+        %{--success: function (response) {--}%
+        %{--$('#tableSection').html(response)--}%
+        %{--$("#frmLogin").submit();--}%
+        %{--}--}%
+        %{--});--}%
+        %{--}--}%
+        event.preventDefault(); // Previene el envío del formulario
+
         var usuario = $("#login").val();
         console.log('usuario', usuario);
         if (usuario) {
-            $("#cargando").removeClass('hidden');//document.querySelector(#cargando").classList.remove('hidden')
-            $(".btn-login").replaceWith($("#cargando"));//document.querySelector('.btn-login').replaceWith(document.querySelector('#cargando'))
-            $("#frmLogin").submit();
+            $("#cargando").removeClass('hidden');
+            $(".btn-login").replaceWith($("#cargando"));
+
+            $('#tableSection').empty()
+            $('#tableSection').css('flex-direction','column')
+            $.ajax({
+                type: "POST",
+                url: "${createLink(controller: 'login',action:'validar')}", // Cambia esto a la URL de tu método 'validar'
+                data: $("#frmLogin").serialize(), // Envia los datos del formulario
+                success: function (response) {
+                    console.log('Respuesta de Validar:',response)
+                    $.ajax({
+                        type: "POST",
+                        url: "${createLink(controller: 'provincia', action:'list')}",
+                        success: function (response) {
+                            $('#tableSection').html(response)
+                        }
+                    });
+                }
+            });
         }
     }
 

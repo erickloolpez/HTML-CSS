@@ -82,17 +82,31 @@
             //USA EL SUBMIT FORM DE LIST porque como es javascript es global el pedo que desorden dio mio.
             submitForm();
             //$(".modal-dialog").hide()
-            setTimeout(function () {
-                location.reload(true)
-            }, 300);
+//            setTimeout(function () {
+//                location.reload(true)
+//            }, 300);
             //location.reload(true)
+
+            $('#gridContainer').css('grid-template-columns','100%')
+            $('#cardContent').css('display', 'none')
+            $('#tableSection').empty()
+            $('#tableSection').css('flex-direction','column')
+            $.ajax({
+                type: "POST",
+                url: "${createLink(controller: 'provincia', action:'list')}",
+                success: function (response) {
+                    $('#tableSection').html(response)
+                }
+            });
         }
 
     });
 
     $("#cerrar").click(function () {
         //location.href("${createLink(controller: 'provincia', action:'list')}")
-        location.reload(true)
+        $('#gridContainer').css('grid-template-columns','100%')
+        $('#cardContent').css('display', 'none')
+//        location.reload(true)
     });
 
     //Obra Mia
@@ -122,9 +136,20 @@
                             },
                             success: function (msg) {
                                 if (msg == 'ok') {
-                                    setTimeout(function () {
-                                        location.reload();
-                                    }, 300);
+                                    $('#gridContainer').css('grid-template-columns','100%')
+                                    $('#cardContent').css('display', 'none')
+                                    $('#tableSection').empty()
+                                    $('#tableSection').css('flex-direction','column')
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "${createLink(controller: 'provincia', action:'list')}",
+                                        success: function (response) {
+                                            $('#tableSection').html(response)
+                                        }
+                                    });
+//                                    setTimeout(function () {
+//                                        location.reload();
+//                                    }, 300);
                                 } else {
                                     log("Error al borrar la provincia", "error")
                                 }
@@ -136,17 +161,24 @@
         });
     }
 
-    $(".btn-canton").click(function () {
-        var id = $(this).data("id");
-        //mostrar la lista de cantones
-        location.href = "${createLink(controller: 'canton', action:'list')}/"+id
-    });
-
     $(function () {
         $(".btn-canton").click(function () {
             var id = $(this).data("id");
             //mostrar la lista de cantones
-            location.href = "${createLink(controller: 'canton', action:'list')}/"+id
+            %{--location.href = "${createLink(controller: 'canton', action:'list')}/"+id--}%
+
+
+            $('#gridContainer').css('grid-template-columns','100%')
+            $('#cardContent').css('display', 'none')
+            $('#tableSection').empty()
+            $('#tableSection').css('flex-direction','column')
+            $.ajax({
+                type: "POST",
+                url: "${createLink(controller: 'canton', action:'list')}/"+id,
+                success: function (response) {
+                    $('#tableSection').html(response)
+                }
+            });
         });
 
         $(".btn-borrar").click(function () {

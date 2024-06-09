@@ -30,7 +30,10 @@ class LoginController {
         if (perfil.size() > 0) {
 //            session.usuario.vaciarPermisos()
             session.usuario = user//Esto es algo que tiene groovy me imagino y decide guardar al usuario ahi
-            redirect(controller: 'login', action: "perfiles")//cuando dice controller y action te manda a una view.
+
+            //redirect(controller: 'login', action: "perfiles")cuando dice controller y action te manda a una view.
+//            redirect(controller: 'provincia', action: "list")
+            render(status:200)
             return
         } else {
             flash.message = "No hay perfiles definidos para este usuario"

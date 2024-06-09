@@ -16,6 +16,7 @@
     <asset:javascript src="jquery-3.3.1.min.js"/>
     <asset:javascript src="bootstrap.js"/>
     <asset:javascript src="bootstrap.bundle.js"/>
+    <asset:javascript src="bootbox.js"/>
     <asset:javascript src="fontawesome.all.min.js"/>
 
     <g:layoutHead/>

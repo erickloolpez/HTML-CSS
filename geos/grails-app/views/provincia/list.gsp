@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="layout" content="main">
+    <meta name="layout" content="login">
     <title>Provincias</title>
 
     <style type="text/css">
@@ -41,7 +41,7 @@
     </div>
 </div>
 
-<div id="gridContainer" style="width:100%; height:50vh;display:grid; grid-template-colums:100%;grid-template-rows:100%; background-color:blue;">
+<div id="gridContainer" style="width:100%; height:50vh;display:grid; grid-template-columns:100%;grid-template-rows:100%; background-color:blue;">
     <table class="table table-condensed table-bordered table-striped table-hover">
         <thead>
         <tr>
@@ -104,7 +104,7 @@
     //Control del grid *Erick*
     function createForm(id){
         var data = id ? {id: id} : {};
-        $('#gridContainer').css('grid-template-columns','80% 90%')
+        $('#gridContainer').css('grid-template-columns','80% 20%')
         $('#cardContent').css('display', 'flex')
         $.ajax({
             type: "POST",
@@ -118,6 +118,7 @@
 
 
     //Evento al dar click a una de las filas de la tabla *Erick*
+
     $('tr').click(function(){
         var id=$(this).data('id')
         createForm(id)
@@ -132,10 +133,22 @@
             data: $form.serialize(),//Coge todos los valores dentro de este form incluido la g que deciamos que pedo con esto
             success: function (msg) {
                 if (msg == 'ok') {
-                    log("Provincia guardada correctamente", "success");
-                    setTimeout(function () {
-                        location.reload(true);
-                    }, 1000);
+
+//                    setTimeout(function () {
+//                        location.reload(true);
+//                    }, 1000);
+
+                    $('#gridContainer').css('grid-template-columns','100%')
+                    $('#cardContent').css('display', 'none')
+                    $('#tableSection').empty()
+                    $('#tableSection').css('flex-direction','column')
+                    $.ajax({
+                        type: "POST",
+                        url: "${createLink(controller: 'provincia', action:'list')}",
+                        success: function (response) {
+                            $('#tableSection').html(response)
+                        }
+                    });
                 } else {
                     log("Error al guardar la provincia", "error")
                 }

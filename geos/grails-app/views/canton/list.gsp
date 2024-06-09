@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="layout" content="main">
+    <meta name="layout" content="login">
     <title>Cantones</title>
 
     <style type="text/css">
@@ -41,60 +41,91 @@
     </div>
 </div>
 
-<table class="table table-condensed table-bordered table-striped table-hover">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Número</th>
-        <th>Nombre</th>
-        <th>Acciones</th>
-    </tr>
-    </thead>
-    <tbody>
-    <g:if test="${cantones.size() > 0}">
-        <g:each in="${cantones}" var="canton">
-            <tr data-id="${canton?.id}">
-                <td>${canton?.id}</td>
-                <td>${canton?.numero}</td>
-                <td>${canton?.nombre}</td>
-                <td>
-                    <a href="#" data-id="${canton?.id}" class="btn btn-success btn-sm btn-edit btn-ajax"
-                       title="Editar">
-                        <i class="fa fa-edit"></i>
-                    </a>
-                    <a href="#" data-id="${canton?.id}" class="btn btn-danger btn-sm btn-borrar btn-ajax"
-                       title="Eliminar">
-                        <i class="fa fa-trash"></i>
-                    </a>
-                    <a href="#" data-id="${canton?.id}" class="btn btn-info btn-sm btn-show btn-ajax"
-                       title="Ver Cantón">
-                        <i class="fa fa-search"></i>
-                    </a>
-                    <a href="#" data-id="${canton?.id}"
-                       class="btn btn-warning btn-sm btn-parroquia btn-ajax"
-                       title="Ver Porroquia">
-                        <i class="fa fa-search"></i>
-                    </a>
+<div id="gridContainer" style="width:100%; height:50vh;display:grid; grid-template-columns:100%;grid-template-rows:100%; background-color:blue;">
+    <table class="table table-condensed table-bordered table-striped table-hover">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Número</th>
+            <th>Nombre</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <g:if test="${cantones.size() > 0}">
+            <g:each in="${cantones}" var="canton">
+                <tr data-id="${canton?.id}">
+                    <td>${canton?.id}</td>
+                    <td>${canton?.numero}</td>
+                    <td>${canton?.nombre}</td>
+                    <td>
+                        <a href="#" data-id="${canton?.id}" class="btn btn-success btn-sm btn-edit btn-ajax"
+                           title="Editar">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a href="#" data-id="${canton?.id}" class="btn btn-danger btn-sm btn-borrar btn-ajax"
+                           title="Eliminar">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                        <a href="#" data-id="${canton?.id}" class="btn btn-info btn-sm btn-show btn-ajax"
+                           title="Ver Cantón">
+                            <i class="fa fa-search"></i>
+                        </a>
+                        <a href="#" data-id="${canton?.id}"
+                           class="btn btn-warning btn-sm btn-parroquia btn-ajax"
+                           title="Ver Porroquia">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </td>
+                </tr>
+            </g:each>
+        </g:if>
+        <g:else>
+            <tr class="danger">
+                <td class="text-center" colspan="2">
+                    No se encontraron registros que mostrar
                 </td>
             </tr>
-        </g:each>
-    </g:if>
-    <g:else>
-        <tr class="danger">
-            <td class="text-center" colspan="2">
-                No se encontraron registros que mostrar
-            </td>
-        </tr>
-    </g:else>
-    </tbody>
-</table>
+        </g:else>
+        </tbody>
+    </table>
+    <g:textField name="provinciaId" maxlength="63" class="form-control input-sm required"
+                 value="${provincia}" style="display:none;"/>
+    <div id="cardContent" style="width:100%; height:100%;display:none;background-color:red;flex-direction:column;">
+
+    </div>
+</div>
 
 
 <script type="text/javascript">
     var id = null;
 
+    //Control del grid *Erick*
+    function createForm(id){
+        var provincia = $('#provinciaId').val();
+        var data = id ? {id: id,prov:provincia} : {prov:provincia};
+        $('#gridContainer').css('grid-template-columns','80% 20%')
+        $('#cardContent').css('display', 'flex')
+        $.ajax({
+            type: "POST",
+            url: "${createLink(controller: 'canton', action:'form_ajax')}/",
+            data: data,
+            success: function (response) {
+                $('#cardContent').html(response)
+            }
+        });
+    }
+
+    //Evento al dar click a una de las filas de la tabla *Erick*
+    $('tr').click(function(){
+        var id=$(this).data('id')
+        createForm(id)
+    })
+
+
     function submitForm() {
         var $form = $("#frmCanton");
+        var provincia = $('#provinciaId').val()
         var $btn = $("#dlgCreateEdit").find("#btnSave");
         $.ajax({
             type: "POST",
@@ -102,16 +133,24 @@
             data: $form.serialize(),
             success: function (msg) {
                 if (msg == 'ok') {
-                    log("Cantón guardado correctamente", "success");
-                    setTimeout(function () {
-                        location.reload(true);
-                    }, 1000);
+                    $('#gridContainer').css('grid-template-columns','100%')
+                    $('#cardContent').css('display', 'none')
+                    $('#tableSection').empty()
+                    $('#tableSection').css('flex-direction','column')
+                    $.ajax({
+                        type: "POST",
+                        url: "${createLink(controller: 'canton', action:'list')}/"+provincia,
+                        success: function (response) {
+                            $('#tableSection').html(response)
+                        }
+                    });
                 } else {
                     log("Error al guardar la cantón", "error")
                 }
             }
         });
     }
+
 
 
     function deleteRow(itemId) {
@@ -181,7 +220,8 @@
     $(function () {
 
         $(".btnCrear").click(function () {
-            createEditRow();
+//            createEditRow();
+            createForm()
             return false;
         });
 
