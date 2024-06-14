@@ -50,7 +50,7 @@
         <th>Acciones</th>
     </tr>
     </thead>
-    <tbody>
+    <tbody style="background-color:white">
     <g:if test="${parroquias.size() > 0}">
         <g:each in="${parroquias}" var="parroquia">
             <tr data-id="${parroquia?.id}">

@@ -97,8 +97,8 @@
                         <i class='fa fa-star-half fa-lg' style='color:#ffc107'></i>
                         <p style="padding:0;margin:0;color:#0866B8">Score: 8.4</p>
                     </div>
-                    <div style="width:100%; height:40%; ">
-                        <p style="margin:0;padding:0; color:white">Ambientada en una galaxia no muy lejana, "WALLE" es una comedia que trata sobre un robot en particular. Tras cientos de años dedicado a hacer las tareas para las que fue construido, WALLE (abreviatura de Waste Allocation Load Lifter Earth-Class) descubre un nuevo objetivo en su vida (además de recoger cachivaches) cuando conoce a una estilosa robot de búsqueda llamada EVE (Extra-terrestrial Vegetation Evaluator). EVE se da cuenta de que WALLE ha dado por casualidad con la clave del futuro del planeta, y regresa inmediatamente al espacio para informar sobre sus descubrimientos a los humanos, que llevan mucho tiempo esperando con impaciencia la noticia de que pueden volver a casa con garantías de seguridad. Mientras tanto, WALLE persigue a EVE por la galaxia.</p>
+                    <div style="width:100%; height:40%;">
+                        <p style="margin:0;padding:0; color:white; display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical; overflow:hidden;text-overflow:ellipsis">Ambientada en una galaxia no muy lejana, "WALLE" es una comedia que trata sobre un robot en particular. Tras cientos de años dedicado a hacer las tareas para las que fue construido, WALLE (abreviatura de Waste Allocation Load Lifter Earth-Class) descubre un nuevo objetivo en su vida (además de recoger cachivaches) cuando conoce a una estilosa robot de búsqueda llamada EVE (Extra-terrestrial Vegetation Evaluator). EVE se da cuenta de que WALLE ha dado por casualidad con la clave del futuro del planeta, y regresa inmediatamente al espacio para informar sobre sus descubrimientos a los humanos, que llevan mucho tiempo esperando con impaciencia la noticia de que pueden volver a casa con garantías de seguridad. Mientras tanto, WALLE persigue a EVE por la galaxia.</p>
                     </div>
                     <div style="width:100%; height:25%;display:flex; justify-content:start; gap:30px; align-items:center;">
                         <div style="width:30%; height:40px;border-radius:8px; border:2px solid #0C3760; display:flex;justify-content:center; align-items:center;">
@@ -310,7 +310,8 @@
                     console.log('Respuesta de Validar:',response)
                     $.ajax({
                         type: "POST",
-                        url: "${createLink(controller: 'provincia', action:'list')}",
+                        %{--url: "${createLink(controller: 'provincia', action:'list')}",--}%
+                        url: "${createLink(controller: 'genero', action:'list')}",
                         success: function (response) {
                             $('#tableSection').html(response)
                         }

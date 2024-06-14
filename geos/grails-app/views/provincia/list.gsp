@@ -41,7 +41,7 @@
     </div>
 </div>
 
-<div id="gridContainer" style="width:100%; height:50vh;display:grid; grid-template-columns:100%;grid-template-rows:100%; background-color:blue;">
+<div id="gridContainer" style="width:100%; height:50vh;display:grid; grid-template-columns:100%;grid-template-rows:100%;">
     <table class="table table-condensed table-bordered table-striped table-hover">
         <thead>
         <tr>
@@ -52,7 +52,7 @@
             <th>Acciones</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody style="background-color: white">
         <!--Como tiene un return de provincias en el constructor POS AQUI ESTA-->
         <g:if test="${provincias.size() > 0}">
             <g:each in="${provincias}" var="provincia">
@@ -92,7 +92,7 @@
         </g:else>
         </tbody>
     </table>
-    <div id="cardContent" style="width:100%; height:100%;display:none;background-color:red;flex-direction:column;">
+    <div id="cardContent" style="width:100%; height:100%;display:none;flex-direction:column;">
 
     </div>
 </div>
