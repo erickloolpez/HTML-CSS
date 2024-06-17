@@ -186,7 +186,7 @@
             $('#tableSection').css('flex-direction','column')
             $.ajax({
                 type: "POST",
-                url: "${createLink(controller: 'genero', action:'list')}/"+id,
+                url: "${createLink(controller: 'pelicula', action:'list')}/"+id,
                 success: function (response) {
                     $('#tableSection').html(response)
                 }

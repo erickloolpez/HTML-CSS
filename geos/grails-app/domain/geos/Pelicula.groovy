@@ -2,7 +2,6 @@ package geos
 
 class Pelicula {
     Genero genero
-    String titulo
     String nombre
     int anio_lanzamiento
     int duracion
@@ -18,19 +17,17 @@ class Pelicula {
         columns {
             id column: 'plcl__id'
             genero column: 'gnro__id'
-            titulo column: 'plcltitlo'
             nombre column: 'plclnmbre'
             anio_lanzamiento column: 'plclanio'
             duracion column: 'plcldrcn'
             sinopsis column: 'plclsnps'
-            imagen column: 'plclimg'
+            imagen column: 'plclimg', length:500
         }
     }
     static constraints = {
         genero(nullable: false)
-        titulo(blank: false, size: 1..100)
         nombre(blank: false, size: 1..63)
-        anio_lanzamiento(nullable: false, min: 1880) // Año de la primera película conocida.
+        anio_lanzamiento(nullable: false) // Año de la primera película conocida.
         duracion(nullable: false, min: 1)
         sinopsis(blank: false, size: 1..500)
         imagen(blank:false)
