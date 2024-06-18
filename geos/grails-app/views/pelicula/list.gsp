@@ -27,22 +27,28 @@
 </g:if>
 
 <!-- botones -->
-<div class="btn-toolbar toolbar">
-    <div class="btn-group">
-        <g:link controller="inicio" action="index" class="btn btn-secondary">
-            <i class="fa fa-arrow-left"></i> Regresar
-        </g:link>
+<div class="btn-toolbar toolbar" style="width:100%;height:45px;display:flex; justify-content:space-between; align-items:center">
+    <div>
+        <div class="btn-group">
+            %{--<g:link controller="inicio" action="index" class="btn btn-secondary">--}%
+            <a href="#" class="btn btn-secondary btn-regresar">
+                <i class="fa fa-arrow-left"></i> Regresar
+            </a>
+            %{--</g:link>--}%
+        </div>
+        <div class="btn-group">
+            <a href="#" class="btn btn-primary btnCrear">
+                <i class="fa fa-clipboard-list"></i> Nueva Pelicula
+            </a>
+        </div>
     </div>
-
-    <div class="btn-group">
-        <a href="#" class="btn btn-primary btnCrear">
-            <i class="fa fa-clipboard-list"></i> Nueva Pelicula
-        </a>
+    <div>
+        <h2 style="color:white; margin-right:20px">Peliculas de ${generoCompleto.nombre}</h2>
     </div>
 </div>
 
 <div id="gridContainer" style="width:100%; height:50vh;display:grid; grid-template-columns:100%;grid-template-rows:100%; ;">
-    <table class="table table-condensed table-bordered table-striped table-hover">
+    <table class="table table-condensed table-bordered table-striped table-hover" style="margin:0px; margin-bottom:0px">
         <thead>
         <tr>
             <th>ID</th>
@@ -81,7 +87,7 @@
                     Aqui pior
                 </td>
                 <td >
-                   Nel
+                    Nel
                 </td>
                 <td >
                     Sigue Intentandolo
@@ -219,6 +225,24 @@
 
 
     $(function () {
+        $(".btn-regresar").click(function () {
+            var id = $(this).data("id");
+            //mostrar la lista de cantones
+            %{--location.href = "${createLink(controller: 'canton', action:'list')}/"+id--}%
+
+
+            $('#gridContainer').css('grid-template-columns','100%')
+            $('#cardContent').css('display', 'none')
+            $('#tableSection').empty()
+            $('#tableSection').css('flex-direction','column')
+            $.ajax({
+                type: "POST",
+                url: "${createLink(controller: 'genero', action:'list')}/"+id,
+                success: function (response) {
+                    $('#tableSection').html(response)
+                }
+            });
+        });
 
         $(".btnCrear").click(function () {
 //            createEditRow();

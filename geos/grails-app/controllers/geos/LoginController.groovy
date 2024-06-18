@@ -7,12 +7,20 @@ class LoginController {
     }
 
     def login() {//se llama a la vista y funciona como un constructor ALVVV
+        def peliculas = Pelicula.list([sort: 'nombre'])
+
         def usro = session.usuario
         def cn = "inicio"
         def an = "index"
         if (usro) {
             redirect(controller: cn, action: an)//como no existe hace lo del validar del submit
         }
+        return [peliculas:peliculas]
+    }
+
+    def getPeliculas(){
+        def peliculasGet = Pelicula.list([sort:'nombre'])
+        return [peliculasGet:peliculasGet]
     }
 
     def validar() {

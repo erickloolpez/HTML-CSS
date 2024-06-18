@@ -1,4 +1,3 @@
-
 <div class="modal-contenido" style="width:100%; height:100%;background-color:white;display: flex; flex-direction: column; justify-content:center">
     <!--Ya sabemos que si tiene esto de la g, es porque usa una accion del controlador-->
     <div style="width:90%; height:90%; display: flex; flex-direction: column; justify-content: space-around">

@@ -27,22 +27,24 @@
 </g:if>
 
 <!-- botones -->
-<div class="btn-toolbar toolbar">
-    <div class="btn-group">
-        <g:link controller="inicio" action="index" class="btn btn-secondary">
-            <i class="fa fa-arrow-left"></i> Regresar
-        </g:link>
-    </div>
+<div class="btn-toolbar toolbar" style="width:100%; height:45px;display:flex;align-items:center">
+    <div>
+        <div class="btn-group">
+            <g:link controller="inicio" action="index" class="btn btn-secondary">
+                <i class="fa fa-arrow-left"></i> Regresar
+            </g:link>
+        </div>
 
-    <div class="btn-group">
-        <a href="#" class="btn btn-primary btnCrear">
-            <i class="fa fa-clipboard-list"></i> Nueva Provincia
-        </a>
+        <div class="btn-group">
+            <a href="#" class="btn btn-primary btnCrear">
+                <i class="fa fa-clipboard-list"></i> Nueva Provincia
+            </a>
+        </div>
     </div>
 </div>
 
 <div id="gridContainer" style="width:100%; height:50vh;display:grid; grid-template-columns:100%;grid-template-rows:100%;">
-    <table class="table table-condensed table-bordered table-striped table-hover">
+    <table class="table table-condensed table-bordered table-striped table-hover" style="margin:0px; margin-bottom:0px">
         <thead>
         <tr>
             <th>Id</th>

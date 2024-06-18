@@ -20,14 +20,14 @@ class Pelicula {
             nombre column: 'plclnmbre'
             anio_lanzamiento column: 'plclanio'
             duracion column: 'plcldrcn'
-            sinopsis column: 'plclsnps'
+            sinopsis column: 'plclsnps', length:1024
             imagen column: 'plclimg', length:500
         }
     }
     static constraints = {
         genero(nullable: false)
         nombre(blank: false, size: 1..63)
-        anio_lanzamiento(nullable: false) // Año de la primera película conocida.
+        anio_lanzamiento(nullable: false, min:1880) // Año de la primera película conocida.
         duracion(nullable: false, min: 1)
         sinopsis(blank: false, size: 1..500)
         imagen(blank:false)

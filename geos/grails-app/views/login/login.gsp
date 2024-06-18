@@ -9,6 +9,9 @@
     .hidden {
         display: none;
     }
+    #listMovies::-webkit-scrollbar {
+        display: none;
+    }
     </style>
 </head>
 
@@ -119,59 +122,72 @@
                 <div style="width:100%; height:100%;">
                     <div style="width:100%; height:10%; display:flex; align-items:center; ">
                         <h2 style="color:white">Popular</h2>
-                        <i class='fa fa-angle-left fa-2x' style='margin-left:20px;color:#ffffff'></i>
-                        <i class='fa fa-angle-right fa-2x' style='margin-left:20px;color:#ffffff'></i>
+                        <i id="backBtn" class='fa fa-angle-left fa-2x' style='margin-left:20px;color:#ffffff'></i>
+                        <i id="nextBtn" class='fa fa-angle-right fa-2x' style='margin-left:20px;color:#ffffff'></i>
                     </div>
-                    <div style="width:100%; height:90%;display:flex;gap:30px">
-                        <div style="width:180px; height:90%; margin-top:10px">
-                            <div style="width:100%; height:90%">
-                                <asset:image src="apli/greenBook.jpg" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
+                    <div style="width:100%; height:90%;display:flex; overflow-x:auto" id ="listMovies">
+                        <div style="display:flex; gap:30px" id="itemMovies">
+                            <g:each in="${peliculas}" var="pelicula">
+                                <div style="width:180px; height:90%; margin-top:10px">
+                                    <div style="width:100%; height:90%">
+                                        <img src="${pelicula.imagen}" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
+                                    </div>
+                                    <div style="width:100%; height:10%; display:flex;align-items: center">
+                                        <p style="color: white; margin:0; padding:0">${pelicula.nombre}</p>
+                                    </div>
+                                </div>
+                            </g:each>
+                            <div style="width:180px; height:90%; margin-top:10px">
+                                <div style="width:100%; height:90%">
+                                    <asset:image src="apli/greenBook.jpg" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
+                                </div>
+                                <div style="width:100%; height:10%; display:flex;align-items: center">
+                                    <p style="color: white; margin:0; padding:0">Green Book</p>
+                                </div>
                             </div>
-                            <div style="width:100%; height:10%; display:flex;align-items: center">
-                                <p style="color: white; margin:0; padding:0">Green Book</p>
+                            <div style="width:180px; height:90%; margin-top:10px">
+                                <div style="width:100%; height:90%">
+                                    <asset:image src="apli/increibles.jpg" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
+                                </div>
+                                <div style="width:100%; height:10%; display:flex;align-items: center">
+                                    <p style="color: white; margin:0; padding:0">Increibles 2</p>
+                                </div>
                             </div>
-                        </div>
-                        <div style="width:180px; height:90%; margin-top:10px">
-                            <div style="width:100%; height:90%">
-                                <asset:image src="apli/increibles.jpg" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
+                            <div style="width:180px; height:90%; margin-top:10px">
+                                <div style="width:100%; height:90%">
+                                    <asset:image src="apli/ferdinand.jpg" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
+                                </div>
+                                <div style="width:100%; height:10%; display:flex;align-items: center">
+                                    <p style="color: white; margin:0; padding:0">Ferdinand</p>
+                                </div>
                             </div>
-                            <div style="width:100%; height:10%; display:flex;align-items: center">
-                                <p style="color: white; margin:0; padding:0">Increibles 2</p>
+                            <div style="width:180px; height:90%; margin-top:10px">
+                                <div style="width:100%; height:90%">
+                                    <asset:image src="apli/tunner.jpeg" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
+                                </div>
+                                <div style="width:100%; height:10%; display:flex;align-items: center">
+                                    <p style="color: white; margin:0; padding:0">Tuner</p>
+                                </div>
                             </div>
-                        </div>
-                        <div style="width:180px; height:90%; margin-top:10px">
-                            <div style="width:100%; height:90%">
-                                <asset:image src="apli/ferdinand.jpg" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
+                            <div style="width:180px; height:90%; margin-top:10px">
+                                <div style="width:100%; height:90%">
+                                    <asset:image src="apli/home.jpg" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
+                                </div>
+                                <div style="width:100%; height:10%; display:flex;align-items: center">
+                                    <p style="color: white; margin:0; padding:0">Home</p>
+                                </div>
                             </div>
-                            <div style="width:100%; height:10%; display:flex;align-items: center">
-                                <p style="color: white; margin:0; padding:0">Ferdinand</p>
+                            <div style="width:180px; height:90%; margin-top:10px">
+                                <div style="width:100%; height:90%">
+                                    <asset:image src="apli/alone.jpg" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
+                                </div>
+                                <div style="width:100%; height:10%; display:flex;align-items: center">
+                                    <p style="color: white; margin:0; padding:0">Alone at Night</p>
+                                </div>
                             </div>
-                        </div>
-                        <div style="width:180px; height:90%; margin-top:10px">
-                            <div style="width:100%; height:90%">
-                                <asset:image src="apli/tunner.jpeg" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
-                            </div>
-                            <div style="width:100%; height:10%; display:flex;align-items: center">
-                                <p style="color: white; margin:0; padding:0">Tuner</p>
-                            </div>
-                        </div>
-                        <div style="width:180px; height:90%; margin-top:10px">
-                            <div style="width:100%; height:90%">
-                                <asset:image src="apli/home.jpg" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
-                            </div>
-                            <div style="width:100%; height:10%; display:flex;align-items: center">
-                                <p style="color: white; margin:0; padding:0">Home</p>
-                            </div>
-                        </div>
-                        <div style="width:180px; height:90%; margin-top:10px">
-                            <div style="width:100%; height:90%">
-                                <asset:image src="apli/alone.jpg" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
-                            </div>
-                            <div style="width:100%; height:10%; display:flex;align-items: center">
-                                <p style="color: white; margin:0; padding:0">Alone at Night</p>
-                            </div>
-                        </div>
 
+
+                        </div>
                     </div>
                 </div>
 
@@ -274,6 +290,27 @@
     var $frm = $("#frmLogin");
     var recargar = true
 
+    var scrollContainer = document.getElementById('listMovies')
+    var backBtn = document.getElementById('backBtn')
+    var nextBtn = document.getElementById('nextBtn')
+
+
+    scrollContainer.addEventListener('wheel',function(evt){
+        evt.preventDefault()
+        scrollContainer.scrollLeft += evt.deltaY
+        scrollContainer.style.scrollBehavior='auto'
+    })
+
+
+    $(document).on('click', '#nextBtn', function() {
+        scrollContainer.style.scrollBehavior = 'smooth'
+        scrollContainer.scrollLeft += 900
+    });
+
+    $(document).on('click', '#backBtn', function() {
+        scrollContainer.style.scrollBehavior = 'smooth'
+        scrollContainer.scrollLeft -= 900
+    });
 
     function doLogin() {
         %{--var usuario = $("#login").val();--}%

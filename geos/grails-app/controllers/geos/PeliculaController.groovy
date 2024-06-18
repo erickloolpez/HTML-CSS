@@ -10,7 +10,7 @@ class PeliculaController {
         def genero = Genero.get(params.id)
         def peliculas = Pelicula.findAllByGenero(genero, [sort: 'nombre'])
         println "peliculas: $peliculas del genero: ${genero?.id}"
-        return[peliculas: peliculas, genero: genero?.id]
+        return[peliculas: peliculas, genero: genero?.id, generoCompleto: genero]
     }
 
     def form_ajax(){
