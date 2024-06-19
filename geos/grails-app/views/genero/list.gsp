@@ -30,14 +30,8 @@
 <div class="btn-toolbar toolbar" style="width:100%; height:45px;display:flex;align-items:center">
     <div>
         <div class="btn-group">
-            <g:link controller="inicio" action="index" class="btn btn-secondary">
-                <i class="fa fa-arrow-left"></i> Regresar
-            </g:link>
-        </div>
-
-        <div class="btn-group">
             <a href="#" class="btn btn-primary btnCrear">
-                <i class="fa fa-clipboard-list"></i> Nueva Provincia
+                <i class="fa fa-clipboard-list"></i> Nuevo Genero
             </a>
         </div>
     </div>
@@ -50,6 +44,7 @@
             <th>Id</th>
             <th>Nombre</th>
             <th>Descripcion</th>
+            <th>Peliculas</th>
         </tr>
         </thead>
         <tbody style="background-color: white">
@@ -60,7 +55,7 @@
                     <td>${genero?.id}</td>
                     <td>${genero?.nombre}</td>
                     <td>${genero?.descripcion}</td>
-                    %{--<td>${geos.Genero.countByPelicula(genero)}</td>--}%
+                    <td>${geos.Pelicula.countByGenero(genero)}</td>
 
                     %{--<td>--}%
                         %{--<a href="#" data-id="${genero?.id}" class="btn btn-success btn-sm btn-edit btn-ajax"--}%

@@ -120,12 +120,12 @@
             </div>
             <div style="width:94%; height:35%; display:flex; justify-content:center;z-index:2">
                 <div style="width:100%; height:100%;">
-                    <div style="width:100%; height:10%; display:flex; align-items:center; ">
+                    <div style="width:100%; height:12%; display:flex; align-items:center; ">
                         <h2 style="color:white">Popular</h2>
                         <i id="backBtn" class='fa fa-angle-left fa-2x' style='margin-left:20px;color:#ffffff'></i>
                         <i id="nextBtn" class='fa fa-angle-right fa-2x' style='margin-left:20px;color:#ffffff'></i>
                     </div>
-                    <div style="width:100%; height:90%;display:flex; overflow-x:auto" id ="listMovies">
+                    <div style="width:100%; height:88%;display:flex; overflow-x:auto" id ="listMovies">
                         <div style="display:flex; gap:30px" id="itemMovies">
                             <g:each in="${peliculas}" var="pelicula">
                                 <div style="width:180px; height:90%; margin-top:10px">

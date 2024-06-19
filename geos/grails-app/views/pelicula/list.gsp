@@ -16,6 +16,10 @@
     input:valid {
         border: 2px solid black;
     }
+
+    #gridRoll::-webkit-scrollbar {
+        display: none;
+    }
     </style>
 
 </head>
@@ -27,7 +31,7 @@
 </g:if>
 
 <!-- botones -->
-<div class="btn-toolbar toolbar" style="width:100%;height:45px;display:flex; justify-content:space-between; align-items:center">
+<div class="btn-toolbar toolbar" style="width:100%;height:10%;display:flex; justify-content:space-between; align-items:center">
     <div>
         <div class="btn-group">
             %{--<g:link controller="inicio" action="index" class="btn btn-secondary">--}%
@@ -47,55 +51,58 @@
     </div>
 </div>
 
-<div id="gridContainer" style="width:100%; height:50vh;display:grid; grid-template-columns:100%;grid-template-rows:100%; ;">
-    <table class="table table-condensed table-bordered table-striped table-hover" style="margin:0px; margin-bottom:0px">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Imagen</th>
-            <th>Sinopsis</th>
-            <th>Duracion</th>
-            <th>Anio</th>
-        </tr>
-        </thead>
-        <tbody style="background-color:white">
-        <g:if test="${peliculas.size() > 0}">
-            <g:each in="${peliculas}" var="pelicula">
-                <tr data-id="${pelicula?.id}">
-                    <td>${pelicula?.id}</td>
-                    <td>${pelicula?.nombre}</td>
-                    <td>${pelicula?.imagen}</td>
-                    <td>${pelicula?.sinopsis}</td>
-                    <td>${pelicula?.duracion}</td>
-                    <td>${pelicula?.anio_lanzamiento}</td>
-                </tr>
-            </g:each>
-        </g:if>
-        <g:else>
-            <tr class="danger">
-                <td >
-                    No se encontraron registros que mostrar
-                </td>
-                <td >
-                    No hay
-                </td>
-                <td >
-                    Tampoco hay
-                </td>
-                <td >
-                    Aqui pior
-                </td>
-                <td >
-                    Nel
-                </td>
-                <td >
-                    Sigue Intentandolo
-                </td>
+<div id="gridContainer" style="width:100%; height:90%;display:grid; grid-template-columns:100%;grid-template-rows:100%;">
+    <div style="width:100%; height:100%; overflow:auto" id="gridRoll">
+        <table class="table table-condensed table-bordered table-striped table-hover" style="margin:0px; margin-bottom:0px;">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Imagen</th>
+                <th>Sinopsis</th>
+                <th>Duracion</th>
+                <th>Anio</th>
             </tr>
-        </g:else>
-        </tbody>
-    </table>
+            </thead>
+            <tbody style="background-color:white;">
+            <g:if test="${peliculas.size() > 0}">
+                <g:each in="${peliculas}" var="pelicula">
+                    <tr data-id="${pelicula?.id}">
+                        <td style="width:16%">${pelicula?.id}</td>
+                        <td style="width:16%">${pelicula?.nombre}</td>
+                        <td style="width:16%"><img src="${pelicula?.imagen}" style="width:100%" /></td>
+                        <td style="width:16%">${pelicula?.sinopsis}</td>
+                        <td style="width:16%">${pelicula?.duracion}</td>
+                        <td style="width:16%">${pelicula?.anio_lanzamiento}</td>
+                    </tr>
+                </g:each>
+            </g:if>
+            <g:else>
+                <tr class="danger">
+                    <td >
+                        No se encontraron registros que mostrar
+                    </td>
+                    <td >
+                        No hay
+                    </td>
+                    <td >
+                        Tampoco hay
+                    </td>
+                    <td >
+                        Aqui pior
+                    </td>
+                    <td >
+                        Nel
+                    </td>
+                    <td >
+                        Sigue Intentandolo
+                    </td>
+                </tr>
+            </g:else>
+            </tbody>
+        </table>
+
+    </div>
     <g:textField name="generoId" maxlength="63" class="form-control input-sm required"
                  value="${genero}" style="display:none;"/>
     <div id="cardContent" style="width:100%; height:100%;display:none;flex-direction:column;">

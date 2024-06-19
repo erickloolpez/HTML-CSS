@@ -1,100 +1,100 @@
 
 <div class="modal-contenido" style="width:100%; height:100%;background-color:white;display: flex; flex-direction: column; justify-content:center;align-items:center">
-    <div style="width:90%; height:90%; display: flex; flex-direction: column; justify-content: space-around;overflow-y:auto">
-        <g:form class="form-horizontal" name="frmPelicula" role="form" action="save_ajax" method="POST">
-        %{--<g:hiddenField name="id" value="${canton?.id}"/>--}%
-        %{--<g:hiddenField name="prov" value="${provincia}"/>--}%
-            <g:textField name="id" value="${pelicula?.id}" style="display:none;"/>
-            <g:textField name="genero" value="${genero}" style="display:none;"/>
+    <g:form class="form-horizontal" name="frmPelicula" role="form" action="save_ajax" method="POST" style="width:100%;height:100%; overflow-y:auto">
+    %{--<g:hiddenField name="id" value="${canton?.id}"/>--}%
+    %{--<g:hiddenField name="prov" value="${provincia}"/>--}%
+        <g:textField name="id" value="${pelicula?.id}" style="display:none;"/>
+        <g:textField name="genero" value="${genero}" style="display:none;"/>
 
-        %{--<div class="form-group keeptogether ${hasErrors(bean: canton, field: 'nombre', 'error')} col-md-12">--}%
-            <div class="${hasErrors(bean: pelicula, field: 'nombre', 'error')}" style="display:flex; flex-direction:column;">
-                <span>
-                    %{--<span class="row">--}%
-                    <label for="nombre">
-                        %{--<label for="numero" class="col-md-2 control-label">--}%
-                        Nombre
-                    </label>
+    %{--<div class="form-group keeptogether ${hasErrors(bean: canton, field: 'nombre', 'error')} col-md-12">--}%
+        <div class="${hasErrors(bean: pelicula, field: 'nombre', 'error')}" style="display:flex; flex-direction:column;">
+            <span>
+                %{--<span class="row">--}%
+                <label for="nombre">
+                    %{--<label for="numero" class="col-md-2 control-label">--}%
+                    Nombre
+                </label>
 
-                    <div >
-                        %{--<div class="col-md-3">--}%
-                        <!--La razon de usar la g en este caso es porque vamos a llenar este valor con una variable del controlador-->
+                <div >
+                    %{--<div class="col-md-3">--}%
+                    <!--La razon de usar la g en este caso es porque vamos a llenar este valor con una variable del controlador-->
 
-                        <g:textField name="nombre" maxlength="20"
-                                     class="form-control input-sm required"
-                                     value="${pelicula?.nombre}"/>
+                    <g:textField name="nombre" maxlength="20"
+                                 class="form-control input-sm required"
+                                 value="${pelicula?.nombre}"/>
 
-                    </div>
-                    <label for="imagen">
-                        %{--<label for="numero" class="col-md-2 control-label">--}%
-                        Imagen
-                    </label>
+                </div>
+                <label for="imagen">
+                    %{--<label for="numero" class="col-md-2 control-label">--}%
+                    Imagen
+                </label>
 
-                    <div >
-                        %{--<div class="col-md-3">--}%
-                        <!--La razon de usar la g en este caso es porque vamos a llenar este valor con una variable del controlador-->
+                <div >
+                    %{--<div class="col-md-3">--}%
+                    <!--La razon de usar la g en este caso es porque vamos a llenar este valor con una variable del controlador-->
 
-                        <g:textField name="imagen" maxlength="600"
-                                     class="form-control input-sm required"
-                                     value="${pelicula?.imagen}"/>
+                    <g:textField name="imagen" maxlength="600"
+                                 class="form-control input-sm required"
+                                 value="${pelicula?.imagen}"/>
 
-                    </div>
+                </div>
 
-                    <label for="sinopsis" >
-                        %{--<label for="nombre" class="col-md-1 control-label">--}%
-                        Sinopsis
-                    </label>
+                <label for="sinopsis" >
+                    %{--<label for="nombre" class="col-md-1 control-label">--}%
+                    Sinopsis
+                </label>
 
-                    <div >
-                        %{--<div class="col-md-5" style="margin-left: 20px">--}%
-                        <!--La razon de usar la g en este caso es porque vamos a llenar este valor con una variable del controlador-->
+                <div >
+                    %{--<div class="col-md-5" style="margin-left: 20px">--}%
+                    <!--La razon de usar la g en este caso es porque vamos a llenar este valor con una variable del controlador-->
 
-                        %{--<g:textField name="descripcion" maxlength="63" class="form-control input-sm required"--}%
-                        %{--value="${genero?.descripcion}"/>--}%
-                        <g:textArea name="sinopsis" maxlength="200"
-                                    class="form-control input-sm required"
-                                    value="${pelicula?.sinopsis}"/>
+                    %{--<g:textField name="descripcion" maxlength="63" class="form-control input-sm required"--}%
+                    %{--value="${genero?.descripcion}"/>--}%
+                    <g:textArea name="sinopsis" maxlength="200"
+                                class="form-control input-sm required"
+                                value="${pelicula?.sinopsis}"/>
 
-                    </div>
-                    <label for="duracion">
-                        %{--<label for="numero" class="col-md-2 control-label">--}%
-                        Duracion
-                    </label>
+                </div>
+                <label for="duracion">
+                    %{--<label for="numero" class="col-md-2 control-label">--}%
+                    Duracion
+                </label>
 
-                    <div >
-                        %{--<div class="col-md-3">--}%
-                        <!--La razon de usar la g en este caso es porque vamos a llenar este valor con una variable del controlador-->
+                <div >
+                    %{--<div class="col-md-3">--}%
+                    <!--La razon de usar la g en este caso es porque vamos a llenar este valor con una variable del controlador-->
 
-                        <g:textField name="duracion" maxlength="20"
-                                     class="form-control input-sm required"
-                                     value="${pelicula?.duracion}"/>
+                    <g:textField name="duracion" maxlength="20"
+                                 class="form-control input-sm required"
+                                 value="${pelicula?.duracion}"/>
 
-                    </div>
-                    <label for="anio_lanzamiento">
-                        %{--<label for="numero" class="col-md-2 control-label">--}%
-                        Anio de Lanzamaniento
-                    </label>
+                </div>
+                <label for="anio_lanzamiento">
+                    %{--<label for="numero" class="col-md-2 control-label">--}%
+                    Anio de Lanzamaniento
+                </label>
 
-                    <div >
-                        %{--<div class="col-md-3">--}%
-                        <!--La razon de usar la g en este caso es porque vamos a llenar este valor con una variable del controlador-->
+                <div >
+                    %{--<div class="col-md-3">--}%
+                    <!--La razon de usar la g en este caso es porque vamos a llenar este valor con una variable del controlador-->
 
-                        <g:textField name="anio_lanzamiento" maxlength="4"
-                                     class="form-control input-sm required"
-                                     value="${pelicula?.anio_lanzamiento}"/>
-                        <g:textField name="generoNum" maxlength="63" class="form-control input-sm required"
-                                     value="${genero}" style="display:none;"/>
+                    <g:textField name="anio_lanzamiento" maxlength="4"
+                                 class="form-control input-sm required"
+                                 value="${pelicula?.anio_lanzamiento}"/>
+                    <g:textField name="generoNum" maxlength="63" class="form-control input-sm required"
+                                 value="${genero}" style="display:none;"/>
 
-                    </div>
-                    %{--<span class="row">--}%
-                </span>
-            </div>
-        </g:form>
-    </div>
-    <div >
+                </div>
+                %{--<span class="row">--}%
+            </span>
+        </div>
+    </g:form>
+    <div style="width:100%;display:flex; justify-content:space-around" >
         %{--<div class="col-md-12" style="text-align: end">--}%
-        <button id="cerrar" class="btn btn-primary"> Cancelar</button>
-        <button id="grabar" class="btn btn-info"> Grabar</button>
+        <div style="display:flex">
+            <button id="cerrar" class="btn btn-primary"> Cancelar</button>
+            <button id="grabar" class="btn btn-info" style="margin-left:10px"> Grabar</button>
+        </div>
 
         %{--Obra Mia--}%
         <% if (pelicula?.id) { %>
@@ -102,7 +102,7 @@
             <i class="fa fa-trash"></i>
         </a>
         %{--<a href="#" data-id="${pelicula?.id}" class="btn btn-warning btn-sm btn-canton btn-ajax" title="Ingresar cantones">--}%
-            %{--<i class="fa fa-file"></i>--}%
+        %{--<i class="fa fa-file"></i>--}%
         %{--</a>--}%
         <% } %>
     </div>
