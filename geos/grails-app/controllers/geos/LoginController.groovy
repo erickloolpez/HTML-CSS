@@ -13,7 +13,7 @@ class LoginController {
         def cn = "inicio"
         def an = "index"
         if (usro) {
-            redirect(controller: cn, action: an)//como no existe hace lo del validar del submit
+//            redirect(controller: cn, action: an)//como no existe hace lo del validar del submit
         }
         return [peliculas:peliculas]
     }

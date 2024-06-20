@@ -195,12 +195,23 @@
 
         </div>
         <div style="width: 100%;height:100%">
-            <div style="width:100%; height:10%; border-bottom:4px solid #22252D; display:flex; justify-content:center; align-items:center">
+            <div id="loginIcon" style="width:100%; height:10%; border-bottom:4px solid #22252D; display:flex; justify-content:center; align-items:center">
                 <a href="#" id="ingresar" class="btn btn-info"
-                   style="width: 60px; height:60px;border-radius:50%; display:flex;align-items:center;justify-content:center">
+                   style="width: 50px; height:50px;border-radius:50%; display:flex;align-items:center;justify-content:center">
                     <i class="fas fa-user fa-2x" style="color:#ffffff"></i>
                 </a>
                 <p style="color:white; margin:0;padding:0;margin-left:8px">Iniciar Sesion</p>
+            </div>
+            <div id="adminIcon" style="width:100%; height:10%; border-bottom:4px solid #22252D; display:none; justify-content:center; align-items:center">
+                <a href="#" class="btn btn-info"
+                   style="width: 50px; height:50px;border-radius:50%; display:flex;align-items:center;justify-content:center">
+                    <asset:image src="apli/admin.png" style="width:100% ;height:100%;object-fit:cover;border-radius:8px"/>
+                    %{--<i class="fas fa-user fa-2x" style="color:#ffffff"></i>--}%
+                </a>
+                <p style="color:white; margin:0;padding:0;margin-left:8px">Admin</p>
+                <a href="${createLink(controller: 'login', action: 'logout')}" type="button" style="width:25%; height:25%">
+                    <asset:image id="logOutIcon" src="apli/right-from-bracket-solid.svg" style="width:100% ;height:100%;object-fit:contain;border-radius:8px"/>
+                </a>
             </div>
             <div style="width:100%; height:80%; background-color:#1C1F29; display:flex;flex-direction:column;align-items:center;gap:30px">
                 <div style="width:80% ;height:120px; margin-top:10px">
@@ -351,6 +362,9 @@
                         url: "${createLink(controller: 'genero', action:'list')}",
                         success: function (response) {
                             $('#tableSection').html(response)
+                            $('#btnCerrar').click()
+                            $('#adminIcon').css('display','flex')
+                            $('#loginIcon').css('display','none')
                         }
                     });
                 }
@@ -419,6 +433,10 @@
                     }
                 });
             }
+        })
+
+        $(window).on('load',function(){
+            window.location.hash = "#"
         })
 
         $('#btnAccion').on('click',function(){
