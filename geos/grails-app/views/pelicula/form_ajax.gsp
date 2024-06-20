@@ -146,26 +146,13 @@
 //                    location.reload(true)
 //                }, 300);
 //            }
-        submitForm();
+        submitForm(genero);
 
         $('#gridContainer').css('grid-template-columns','100%')
         $('#cardContent').css('display', 'none')
         $('#tableSection').empty()
         $('#tableSection').css('flex-direction','column')
-        $.ajax({
-            type: "POST",
-            url: "${createLink(controller: 'pelicula', action:'list')}/"+genero,
-            success: function (response) {
-                $('#tableSection').html(response)
-                $.ajax({
-                    type: "POST",
-                    url: "${createLink(controller: 'login', action:'getPeliculas')}",
-                    success: function (response) {
-                        $('#itemMovies').html(response)
-                    }
-                });
-            }
-        });
+        $('#tableSection').html(response)
     });
 
     $("#cerrar").click(function () {

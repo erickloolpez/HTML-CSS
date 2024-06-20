@@ -53,7 +53,7 @@
 
 <div id="gridContainer" style="width:100%; height:90%;display:grid; grid-template-columns:100%;grid-template-rows:100%;">
     <div style="width:100%; height:100%; overflow:auto" id="gridRoll">
-        <table class="table table-condensed table-bordered table-striped table-hover" style="margin:0px; margin-bottom:0px;">
+        <table class="table table-condensed table-bordered table-striped table-hover" style="margin:0px; margin-bottom:0px;width:100%; height:100%">
             <thead>
             <tr>
                 <th>ID</th>
@@ -156,6 +156,13 @@
                         url: "${createLink(controller: 'pelicula', action:'list')}/"+genero,
                         success: function (response) {
                             $('#tableSection').html(response)
+                            $.ajax({
+                                type: "POST",
+                                url: "${createLink(controller: 'login', action:'getPeliculas')}",
+                                success: function (response) {
+                                    $('#itemMovies').html(response)
+                                }
+                            });
                         }
                     });
                 } else {
@@ -164,7 +171,6 @@
             }
         });
     }
-
 
 
     function deleteRow(itemId) {

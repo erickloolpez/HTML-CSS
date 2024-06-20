@@ -34,10 +34,10 @@
                         <a style="color:white;font-weight:bold; font-size:16px">Peliculas</a>
                     </div>
                     <ul style=" height:86%; display:flex; flex-direction: column; justify-content:space-around">
-                        <li style="color: white; list-style: none;margin-left:42px;font-size:16px">Accion</li>
-                        <li style="color:white;list-style:none;margin-left:42px;font-size:16px">Ciencia Ficcion</li>
-                        <li style="color:white;list-style:none;margin-left:42px; font-size:16px">Amor</li>
-                        <li style="color:white;list-style:none;margin-left:42px; font-size:16px">Comedia</li>
+                        <li id="btnAccion" style="color: white; list-style: none;margin-left:42px;font-size:16px;cursor:pointer">Accion</li>
+                        <li id="btnFiccion" style="color:white;list-style:none;margin-left:42px;font-size:16px;cursor:pointer">Ciencia Ficcion</li>
+                        <li id="btnAmor" style="color:white;list-style:none;margin-left:42px; font-size:16px;cursor:pointer">Amor</li>
+                        <li id="btnComedia" style="color:white;list-style:none;margin-left:42px; font-size:16px;cursor:pointer">Comedia</li>
                         <li style="color:white;list-style:none;margin-left:42px; font-size:16px">Mas</li>
                     </ul>
                 </li>
@@ -81,7 +81,7 @@
             <div style="width:94%; height:10%;display:flex; align-items:center">
                 <div style="display:flex;justify-content:center; align-items:center;width:18%;height:50px; border-radius:30px;margin-left:20px;border:2px solid #0D4A83">
                     <i class='fa fa-search fa-lg' style='color:#ffffff'></i>
-                    <input type="text" placeholder="Busqueda" style="margin-left:12px;width:120px;background-color:transparent;border:none; color:white;outline:none;box-shadow:none";/>
+                    <input type="text" placeholder="Busqueda" id="inputBusqueda" style="margin-left:12px;width:120px;background-color:transparent;border:none; color:white;outline:none;box-shadow:none";/>
                 </div>
             </div>
             <div id="tableSection" style="width:94%; height:55%; display:flex;z-index:1;">
@@ -386,11 +386,11 @@
             doPass();
         });
 
-        $("input").keyup(function (ev) {//document.querySelectorAll('input').
-            if (ev.keyCode == 13) {
-                doLogin();
-            }
-        })
+//        $("input").keyup(function (ev) {//document.querySelectorAll('input').
+//            if (ev.keyCode == 13) {
+//                doLogin();
+//            }
+//        })
 
         // window.onload = timedRefresh(5000);
         $('#ingresar').on( "click", function() {
@@ -401,6 +401,56 @@
             console.log('cerrar');
         });
 
+        $('#inputBusqueda').keyup(function(e){
+            if(e.keyCode == 13){
+                var criterio = $("#inputBusqueda").val()
+                %{--location.href = "${createLink(action:'buscar')}" + "?crit=" + criterio--}%
+
+                $('#gridContainer').css('grid-template-columns','100%')
+                $('#cardContent').css('display', 'none')
+                $('#tableSection').empty()
+                $('#tableSection').css('flex-direction','column')
+                $.ajax({
+                    type: "POST",
+                    %{--url: "${createLink(controller: 'provincia', action:'list')}",--}%
+                    url: "${createLink(controller: 'pelicula', action:'listSearch')}"+"?crit="+criterio,
+                    success: function (response) {
+                        $('#tableSection').html(response)
+                    }
+                });
+            }
+        })
+
+        $('#btnAccion').on('click',function(){
+            var id = 1
+            getMoviesByGender(id)
+        })
+        $('#btnFiccion').on('click',function(){
+            var id = 34
+            getMoviesByGender(id)
+        })
+        $('#btnAmor').on('click',function(){
+            var id = 35
+            getMoviesByGender(id)
+        })
+        $('#btnComedia').on('click',function(){
+            var id = 36
+            getMoviesByGender(id)
+        })
+
+        function getMoviesByGender(id){
+            $('#gridContainer').css('grid-template-columns','100%')
+            $('#cardContent').css('display', 'none')
+            $('#tableSection').empty()
+            $('#tableSection').css('flex-direction','column')
+            $.ajax({
+                type: "POST",
+                url: "${createLink(controller: 'pelicula', action:'list')}/"+id,
+                success: function (response) {
+                    $('#tableSection').html(response)
+                }
+            });
+        }
 
     });
 

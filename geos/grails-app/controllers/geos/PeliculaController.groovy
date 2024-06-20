@@ -66,4 +66,12 @@ class PeliculaController {
         }
 
     }
+
+    def listSearch(){
+        println "Llega a buscar: $params"
+        def peliBuscada = Pelicula.findAllByNombreIlike("%"+params.crit+"%",[sort:'nombre', order:'desc'])
+        println "peliBuscada: $peliBuscada"
+
+        return[peliBuscada:peliBuscada, criterio:params.crit]
+    }
 }
