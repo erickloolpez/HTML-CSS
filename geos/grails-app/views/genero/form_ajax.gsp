@@ -103,13 +103,13 @@
             $('#cardContent').css('display', 'none')
             $('#tableSection').empty()
             $('#tableSection').css('flex-direction','column')
-            $.ajax({
-                type: "POST",
-                url: "${createLink(controller: 'genero', action:'list')}",
-                success: function (response) {
-                    $('#tableSection').html(response)
-                }
-            });
+            %{--$.ajax({--}%
+                %{--type: "POST",--}%
+                %{--url: "${createLink(controller: 'genero', action:'list')}",--}%
+                %{--success: function (response) {--}%
+                    %{--$('#tableSection').html(response)--}%
+                %{--}--}%
+            %{--});--}%
 //        }
 
     });

@@ -152,7 +152,7 @@
         $('#cardContent').css('display', 'none')
         $('#tableSection').empty()
         $('#tableSection').css('flex-direction','column')
-        $('#tableSection').html(response)
+//        $('#tableSection').html(response)
     });
 
     $("#cerrar").click(function () {
