@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>My website</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img src="./svg/icon_menu.svg" alt="" class="mobile-logo">
+            <h1 class="mobile-title">TH3 Enterprises</h1>
+            <div class="navbar-control">
+                <div class="nav-title">
+                    <h1>TH3 Enterprise</h1>
+                </div>
+                <div class="nav-content">
+                    <a href="">Home</a>
+                    <a href="#gridCategory">Categories</a>
+                    <a href="#gridTop">Top Products</a>
+                    <a href="#gridFaqs">FAQS</a>
+                    <a href="#gridFooter">About us</a>
+                </div>
+
+            </div>
+            <div class="nav-icons">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-user">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M10 9C10.7956 9 11.5587 8.68393 12.1213 8.12132C12.6839 7.55871 13 6.79565 13 6C13 5.20435 12.6839 4.44129 12.1213 3.87868C11.5587 3.31607 10.7956 3 10 3C9.20435 3 8.44129 3.31607 7.87868 3.87868C7.31607 4.44129 7 5.20435 7 6C7 6.79565 7.31607 7.55871 7.87868 8.12132C8.44129 8.68393 9.20435 9 10 9ZM3 18C3 17.0807 3.18106 16.1705 3.53284 15.3212C3.88463 14.4719 4.40024 13.7003 5.05025 13.0503C5.70026 12.4002 6.47194 11.8846 7.32122 11.5328C8.1705 11.1811 9.08075 11 10 11C10.9193 11 11.8295 11.1811 12.6788 11.5328C13.5281 11.8846 14.2997 12.4002 14.9497 13.0503C15.5998 13.7003 16.1154 14.4719 16.4672 15.3212C16.8189 16.1705 17 17.0807 17 18H3Z"
+                        fill="#3F3F46" />
+                </svg>
+                <div class="nav-quantity">
+                    <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill='#3F3F46'>
+                        <path
+                            d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                    </svg>
+                    <div class="number-products">
+                        <p>3</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="menu-mobile">
+            <div class="menu-mobile--content">
+                <ul>
+                    <li>
+                        <a href="">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Packages</a>
+                    </li>
+                    <li>
+                        <a href="">About Us</a>
+                    </li>
+                    <li>
+                        <a href="">Contact Us</a>
+                        <ul class ='menu-contact'>
+                            <li>+593 907635267</li>
+                            <li>th3nterprise@outlook.com</li>
+                        </ul>
+                    </li>
+                    <li class ='social-icons--mobile'>
+                        <a href="#">
+                            <svg width ="25" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+                        </a>
+                        <a href="#">
+                            <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- <section id ='navbarMobile'>
+        <div class="navbar-mobile">
+            <img src="./svg/icon_menu.svg" alt="">
+            <h1>TH3 Enterprises</h1>
+            <div class="nav-quantity">
+                <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill='#3F3F46'>
+                    <path
+                        d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                </svg>
+                <div class="number-products">
+                    <p>3</p>
+                </div>
+            </div>
+        </div>
+
+    </section> -->
+    <main id='main'>
+        <div class="container">
+            <div class="container-content">
+                <div class="container-title">
+                    <h1>E-Commerce</h1>
+                </div>
+                <div class="container-input">
+                    <input type="search" placeholder="  San Francisco">
+                </div>
+                <div class="container-button">
+                    <button>Explore</button>
+                </div>
+            </div>
+        </div>
+        <div class="spacer layer"></div>
+        <div class="suggestion">
+            <div class="suggestion-title">
+                <h1>Suggestions</h1>
+            </div>
+            <div class="suggestion-container">
+                <div class="suggestion-container--scroll">
+                    <!--                     <div class="catalog-cards--container">
+                        <div class="catalog-cards--img ctlg5">
+                            <img src="./img/spiderman.png" alt="">
+                            <div class="catalog-cards--cart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                                    height="20">
+                                    <path
+                                        d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="catalog-cards--title">
+                            <h3>Plastation 5</h3>
+                        </div>
+                        <div class="catalog-cards--category">
+                            <p>Technology</p>
+                            <p>$439</p>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+        <div class="main-favorites" id='gridCategory'>
+            <div class="favorites">
+                <div class="favorites-title">
+                    <h1>Favorites</h1>
+                </div>
+                <div class="scroll">
+                    <div class="scroll-inner">
+                        <!--                         <div class="favorites-container">
+                            <div class="fav-container-child one">
+                                <div class="fav-container-left">
+                                    <div class="fav-container-left-info">
+                                        <p>Electronica de consumo</p>
+                                    </div>
+                                </div>
+                                <div class="fav-container-right">
+                                    <img src="./img/lol.png" alt="Technology">
+                                    <div class="fav-container-right-img onlyOne">
+                                        <img src="./img/asus.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fav-container-child two">
+                                <div class="fav-container-left">
+                                    <div class="fav-container-left-info">
+                                        <p>Indumentaria</p>
+                                    </div>
+                                </div>
+                                <div class="fav-container-right">
+                                    <img src="./img/lol.png" alt="">
+                                    <div class="fav-container-right-img onlyTwo">
+                                        <img src="./img/clothes.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fav-container-child three">
+                                <div class="fav-container-left">
+                                    <div class="fav-container-left-info">
+                                        <p>Hogar y jardin</p>
+                                    </div>
+                                </div>
+                                <div class="fav-container-right">
+                                    <img src="./img/lol.png" alt="">
+                                    <div class="fav-container-right-img onlyThree">
+                                        <img src="./img/garden.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fav-container-child four">
+                                <div class="fav-container-left">
+                                    <div class="fav-container-left-info">
+                                        <p>Deportes y entrenamiento</p>
+                                    </div>
+                                </div>
+                                <div class="fav-container-right">
+                                    <img src="./img/lol.png" alt="">
+                                    <div class="fav-container-right-img onlyFour">
+                                        <img src="./img/gym.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="favorites-container c2">
+                            <div class="fav-container-child one">
+                                <div class="fav-container-left">
+                                    <div class="fav-container-left-info">
+                                        <p>Madre, ninos y juguetes</p>
+                                    </div>
+                                </div>
+                                <div class="fav-container-right">
+                                    <img src="./img/lol.png" alt="">
+                                    <div class="fav-container-right-img onlySeven">
+                                        <img src="./img/baby.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fav-container-child two">
+                                <div class="fav-container-left">
+                                    <div class="fav-container-left-info">
+                                        <p>Empaquetado e impresion</p>
+                                    </div>
+                                </div>
+                                <div class="fav-container-right">
+                                    <img src="./img/lol.png" alt="">
+                                    <div class="fav-container-right-img onlyEight">
+                                        <img src="./img/print.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fav-container-child three">
+                                <div class="fav-container-left">
+                                    <div class="fav-container-left-info">
+                                        <p>Relojes, joyeria, gafas</p>
+                                    </div>
+                                </div>
+                                <div class="fav-container-right">
+                                    <img src="./img/lol.png" alt="">
+                                    <div class="fav-container-right-img onlyNine">
+                                        <img src="./img/reloj.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fav-container-child four">
+                                <div class="fav-container-left">
+                                    <div class="fav-container-left-info">
+                                        <p>Calzado y accesorios</p>
+                                    </div>
+                                </div>
+                                <div class="fav-container-right">
+                                    <img src="./img/lol.png" alt="">
+                                    <div class="fav-container-right-img onlyTen">
+                                        <img src="./img/shoes.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ -->
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="favorites2">
+                <div class="favorites2-left">
+
+                    <div class="fav-container-child">
+                        <div class="fav-container-left">
+                            <div class="fav-container-left-info">
+                                <p>Maquinaria industrial</p>
+                            </div>
+                        </div>
+                        <div class="fav-container-right">
+                            <img src="./img/lol.png" alt="">
+                            <div class="fav-container-right-img onlyFive">
+                                <img src="./img/tools.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="favorites2-right">
+                    <div class="fav-container-child">
+                        <div class="fav-container-left">
+                            <div class="fav-container-left-info">
+                                <p>Belleza</p>
+                            </div>
+                        </div>
+                        <div class="fav-container-right">
+                            <img src="./img/lol.png" alt="">
+                            <div class="fav-container-right-img onlySix">
+                                <img src="./img/shine.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <section id='mobile-category'>
+            <div class="mobile-category--box">
+                <h1>Categories</h1>
+                <div class="categories-mobile">
+                    <div class="mobile-slider">
+                        <!-- <div class="fav-container-child one">
+                        <div class="fav-container-left">
+                            <div class="fav-container-left-info">
+                                <p>Calzado y accesorios</p>
+                            </div>
+                        </div>
+                        <div class="fav-container-right">
+                            <img src="./img/lol.png" alt="">
+                            <div class="fav-container-right-img onlyTen">
+                                <img src="./img/shoes.png" alt="">
+                            </div>
+                        </div>
+                    </div> -->
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <div class="message-section">
+            <div class="message-section--title">
+                <h1>Explore millions of offers tailored to your needs.</h1>
+            </div>
+            <div class="message-section--offers">
+                <div class="offers-card">
+                    <h1>200+</h1>
+                    <p>products</p>
+                </div>
+                <div class="offers-card">
+                    <h1>20+</h1>
+                    <p>suppliers</p>
+                </div>
+                <div class="offers-card">
+                    <h1>11+</h1>
+                    <p>categories</p>
+                </div>
+                <div class="offers-card">
+                    <h1>23+</h1>
+                    <p>province</p>
+                </div>
+            </div>
+        </div>
+        <div class="work-section">
+            <div class="scatter layer3"></div>
+            <div class="work-section--info">
+                <h1>How it works</h1>
+                <p>for capitalism, freedom means freedom of trade, freedom to buy and sell, not true freedom.</p>
+            </div>
+            <div class="work-section--cards">
+                <div class="work-card">
+                    <div class="work-card--img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="80"
+                            height="80"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M160 112c0-35.3 28.7-64 64-64s64 28.7 64 64v48H160V112zm-48 48H48c-26.5 0-48 21.5-48 48V416c0 53 43 96 96 96H352c53 0 96-43 96-96V208c0-26.5-21.5-48-48-48H336V112C336 50.1 285.9 0 224 0S112 50.1 112 112v48zm24 48a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm152 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z" />
+                        </svg>
+                    </div>
+                    <div class="work-card--title">
+                        <h2>Pick your product</h2>
+                    </div>
+                    <div class="work-card--desc">
+                        <p>This process is the part when you pick the product you are searching in the current day.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-card--img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="80"
+                            height="80"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z" />
+                        </svg>
+                    </div>
+                    <div class="work-card--title">
+                        <h2>Pick your product</h2>
+                    </div>
+                    <div class="work-card--desc">
+                        <p>This process is the part when you pick the product you are searching in the current day.</p>
+                    </div>
+                </div>
+                <div class="work-card">
+                    <div class="work-card--img">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="80"
+                            height="80"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M112 0C85.5 0 64 21.5 64 48V96H16c-8.8 0-16 7.2-16 16s7.2 16 16 16H64 272c8.8 0 16 7.2 16 16s-7.2 16-16 16H64 48c-8.8 0-16 7.2-16 16s7.2 16 16 16H64 240c8.8 0 16 7.2 16 16s-7.2 16-16 16H64 16c-8.8 0-16 7.2-16 16s7.2 16 16 16H64 208c8.8 0 16 7.2 16 16s-7.2 16-16 16H64V416c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H112zM544 237.3V256H416V160h50.7L544 237.3zM160 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96zm272 48a48 48 0 1 1 96 0 48 48 0 1 1 -96 0z" />
+                        </svg>
+                    </div>
+                    <div class="work-card--title">
+                        <h2>Pick your product</h2>
+                    </div>
+                    <div class="work-card--desc">
+                        <p>This process is the part when you pick the product you are searching in the current day.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products-section" id="gridTop">
+            <div class="products-title">
+                <h1>Top Rated</h1>
+            </div>
+            <div class="products">
+                <!--                 <div class="catalog-cards--container">
+                    <div class="catalog-cards--img ctlg">
+                        <img src="./img/spiderman.png" alt="">
+                        <div class="catalog-cards--cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                                height="20">
+                                <path
+                                    d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="catalog-cards--title">
+                        <h3>Plastation 5</h3>
+                    </div>
+                    <div class="catalog-cards--category">
+                        <p>Technology</p>
+                        <p>$439</p>
+                    </div>
+                </div> -->
+
+            </div>
+            <div class="products-more">
+                <button>Load More</button>
+            </div>
+        </div>
+        <div class="comments">
+            <div class="comment-left">
+                <div class="comment-center">
+                    <div class="comment-card--img">
+                        <img src="./img/user.png" alt="user">
+                    </div>
+                    <div class="comment-card--name">
+                        <h3>Juan Diego</h3>
+                        <p>17/03/23</p>
+                    </div>
+                    <div class="comment-card--stars">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                            height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                            height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                            height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                            height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                            height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                        </svg>
+                    </div>
+                    <div class="comment-card--desc">
+                        <p>I really love the way they manage the deliver of the product, they use the best paymest
+                            methods
+                            of
+                            all the purchasement you want to do.</p>
+                    </div>
+
+                </div>
+                <div class="space layer2"></div>
+            </div>
+            <div class="comment-right">
+                <div class="review-title">
+                    <h1>Our Happy Costumers</h1>
+                </div>
+                <div class="review-text">
+                    <p>You can see that the service we produce are in excellent qualities thanks to the comments of
+                        several
+                        of our costumers</p>
+                </div>
+                <div class="review-arrows">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20"
+                        height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20"
+                        height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="faqs" id='gridFaqs'>
+            <div class="faqs-title">
+                <h1>FAQS</h1>
+            </div>
+            <div class="faqs-chat">
+                <div class="faqs-chat--element">
+                    <div class="element-question">
+                        <div class="element-question--img">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="20"
+                                height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z" />
+                            </svg>
+                        </div>
+                        <div class="element-question--text">
+                            <p>¿Qué métodos de pago acepta la tienda digital?</p>
+                        </div>
+                    </div>
+                    <div class="element-answer">
+                        <div class="element-question--text answer">
+                            <p>Aceptamos una amplia variedad de métodos de pago, incluyendo tarjetas de crédito y débito
+                                (Visa, MasterCard, American Express), PayPal, transferencias bancarias y, en algunos
+                                casos, pagos móviles como Apple Pay o Google Pay. Ofrecemos múltiples opciones para que
+                                nuestros clientes elijan la que les resulte más conveniente.</p>
+                        </div>
+                        <div class="element-question--img">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20"
+                                height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="faqs-chat--element">
+                    <div class="element-question">
+                        <div class="element-question--img">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="20"
+                                height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z" />
+                            </svg>
+                        </div>
+                        <div class="element-question--text">
+                            <p>¿Qué métodos de pago acepta la tienda digital?</p>
+                        </div>
+                    </div>
+                    <div class="element-answer">
+                        <div class="element-question--text answer">
+                            <p>Aceptamos una amplia variedad de métodos de pago, incluyendo tarjetas de crédito y débito
+                                (Visa, MasterCard, American Express), PayPal, transferencias bancarias y, en algunos
+                                casos, pagos móviles como Apple Pay o Google Pay. Ofrecemos múltiples opciones para que
+                                nuestros clientes elijan la que les resulte más conveniente.</p>
+                        </div>
+                        <div class="element-question--img">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20"
+                                height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="faqs-chat--element">
+                    <div class="element-question">
+                        <div class="element-question--img">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width="20"
+                                height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M80 160c0-35.3 28.7-64 64-64h32c35.3 0 64 28.7 64 64v3.6c0 21.8-11.1 42.1-29.4 53.8l-42.2 27.1c-25.2 16.2-40.4 44.1-40.4 74V320c0 17.7 14.3 32 32 32s32-14.3 32-32v-1.4c0-8.2 4.2-15.8 11-20.2l42.2-27.1c36.6-23.6 58.8-64.1 58.8-107.7V160c0-70.7-57.3-128-128-128H144C73.3 32 16 89.3 16 160c0 17.7 14.3 32 32 32s32-14.3 32-32zm80 320a40 40 0 1 0 0-80 40 40 0 1 0 0 80z" />
+                            </svg>
+                        </div>
+                        <div class="element-question--text">
+                            <p>¿Cuánto tiempo se tarda en recibir un producto digital después de la compra?</p>
+                        </div>
+                    </div>
+                    <div class="element-answer">
+                        <div class="element-question--text answer">
+                            <p>La entrega de productos digitales es instantánea. Una vez que se completa la compra y se
+                                confirma el pago, podrás descargar o acceder a tu producto digital de inmediato desde tu
+                                cuenta en nuestra tienda. No hay necesidad de esperar el envío físico, ya que los
+                                productos digitales están disponibles al instante.</p>
+                        </div>
+                        <div class="element-question--img">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20"
+                                height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <section id='category'>
+        <div class="category-section">
+            <div class="category-bg">
+                <div class="wave layer4"></div>
+                <div class="category-title">
+                    <h1>Techonolgy</h1>
+                </div>
+            </div>
+            <div class="catalog-products">
+                <div class="catalog-category">
+                    <h2>Filters</h2>
+                </div>
+                <div class="catalog-options">
+                    <ul>
+                        <li>Newest</li>
+                        <li>Highest Rated</li>
+                        <li>Low Price to High</li>
+                        <li>High Price to Low</li>
+                    </ul>
+                </div>
+                <div class="catalog-list">
+                    <div class="catalog-list--categories">
+                        <div class="categories-list">
+                            <h3>Categories</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20"
+                                height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+                            </svg>
+                        </div>
+                        <div class="dropdown">
+                            <ul class="dropdown-content">
+                                <!-- <li>Techonolgy
+                                    <div class="dotted"></div>
+                                    <p>4</p>
+                                </li>
+                                <li>Clothes
+                                    <div class="dotted"></div>
+                                    <p>4</p>
+                                </li>
+                                <li>Clothes
+                                    <div class="dotted"></div>
+                                    <p>4</p>
+                                </li>
+                                <li>Sports
+                                    <div class="dotted"></div>
+                                    <p>4</p>
+                                </li>
+                                <li>Home
+                                    <div class="dotted"></div>
+                                    <p>4</p>
+                                </li>
+                                <li>Package
+                                    <div class="dotted"></div>
+                                    <p>4</p>
+                                </li>
+                                <li>Mothers
+                                    <div class="dotted"></div>
+                                    <p>4</p>
+                                </li>
+                                <li>Shoes
+                                    <div class="dotted"></div>
+                                    <p>4</p>
+                                </li>
+                                <li>Watches
+                                    <div class="dotted"></div>
+                                    <p>4</p>
+                                </li>
+                                <li>Industry
+                                    <div class="dotted"></div>
+                                    <p>4</p>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="catalog-list--categories">
+                        <div class="categories-list">
+                            <h3>Price</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20"
+                                height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+                            </svg>
+                        </div>
+                        <div class="dropdown">
+                            <ul class="dropdown-contentwo">
+                                <li>
+                                    <input type="radio" name='price' id='fifty'>
+
+                                    <label for="fifty" class='label-li'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="10"
+                                            height="10"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                        </svg>
+                                    </label>
+                                    <p>Under 50</p>
+                                </li>
+                                <li>
+                                    <input type="radio" name='price' id='oneHundred'>
+
+                                    <label for="oneHundred" class='label-li'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="10"
+                                            height="10"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                        </svg>
+                                    </label>
+                                    <p>50 to 100</p>
+                                </li>
+                                <li>
+                                    <input type="radio" name='price' id='oneFifty'>
+
+                                    <label for="oneFifty" class='label-li'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="10"
+                                            height="10"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                        </svg>
+                                    </label>
+                                    <p>100 to 150</p>
+                                </li>
+                                <li>
+                                    <input type="radio" name='price' id='twoHundred'>
+
+                                    <label for="twoHundred" class='label-li'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="10"
+                                            height="10"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                        </svg>
+                                    </label>
+                                    <p>150 to 200</p>
+                                </li>
+                                <li>
+                                    <input type="radio" name='price' id='threeHundred'>
+
+                                    <label for="threeHundred" class='label-li'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="10"
+                                            height="10"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                        </svg>
+                                    </label>
+                                    <p>250 to 300</p>
+                                </li>
+                                <li>
+                                    <input type="radio" name='price' id='moreT'>
+
+                                    <label for="moreT" class='label-li'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="10"
+                                            height="10"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                            <path
+                                                d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
+                                        </svg>
+                                    </label>
+                                    <p>Over 300</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog-cards">
+                    <!--                     <div class="catalog-cards--container">
+                        <div class="catalog-cards--img ctlg">
+                            <img src="./img/spiderman.png" alt="">
+                            <div class="catalog-cards--cart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                                    height="20">
+                                    <path
+                                        d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="catalog-cards--title">
+                            <h3>Plastation 5</h3>
+                        </div>
+                        <div class="catalog-cards--category">
+                            <p>Technology</p>
+                            <p>$439</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <section id='productDescription'>
+        <div class="product-description">
+            <div class="product-description--title">
+                <h3>Home</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20"
+                    height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+                </svg>
+                <h3>Techonology</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20"
+                    height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path
+                        d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z" />
+                </svg>
+                <h3>Playstation 5</h3>
+
+            </div>
+            <div class="product-description--one">
+                <div class="product-description-picture">
+                    <img src="./img/foto1.png" alt="">
+                </div>
+                <div class="product-description-picture">
+                    <img src="./img/spiderman.png" alt="">
+                </div>
+                <div class="product-description-picture">
+                    <img src="./img/foto2.png" alt="">
+                </div>
+                <div class="product-description-picture">
+                    <img src="./img/foto3.png" alt="">
+                </div>
+            </div>
+            <div class="product-description--two">
+                <div class="two-bg">
+                    <img src="./img/spiderman.png" alt="">
+                </div>
+                <div class="two-description">
+                    <h3>Playstation 5</h3>
+                    <div class="stars-container">
+                        <div class="two-description--stars">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                                height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                                height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                                height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                                height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                                height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                            </svg>
+                        </div>
+                        <p> 5 reviews</p>
+                    </div>
+                    <h2>$489.00</h2>
+                    <div class="aviability">
+                        <div class="aviability-text">
+                            <h3>Aviability:</h3>
+                            <p> 3 in stock</p>
+                        </div>
+                        <div class="aviability-text">
+                            <h3>SKU:</h3>
+                            <p> ILMPT-C</p>
+                        </div>
+                    </div>
+                    <div class="quantity-buttons">
+                        <div class="quantity">
+                            <div class="quantity-minus">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20"
+                                    height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                    <path
+                                        d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" />
+                                </svg>
+                            </div>
+                            <div class="quantity-text">
+                                <p>1</p>
+                            </div>
+                            <div class="quantity-plus">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20"
+                                    height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                    <path
+                                        d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <button>Add to cart</button>
+                    </div>
+                    <div class="share">
+                        <p>SHARE ON:</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20"
+                            height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20"
+                            height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20"
+                            height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="product-description--three">
+                <div class="three-title">
+                    <h3>Description</h3>
+                    <h3>Review</h3>
+                </div>
+                <div class="three-description">
+                    <p>"PlayStation 5 Spider-Man 2" is an action-adventure game that continues the thrilling saga of
+                        Peter
+                        Parker and Miles Morales as they fight crime and face new challenges in the bustling city of New
+                        York. </p>
+                    <!-- <p>Product details:</p>
+                    <ul>
+                        <li>256GB</li>
+                        <li>Spiderman 2</li>
+                        <li>Joystick</li>
+                    </ul> -->
+                </div>
+            </div>
+            <div class="product-description--four">
+                <div class="four-title">
+                    <h3>Additional Information</h3>
+                </div>
+                <div class="four-description">
+                    <h4>DIMENSIONS</h4>
+                    <p>3x3x3</p>
+                    <h4>WEIGHT</h4>
+                    <p>20kgs</p>
+                </div>
+            </div>
+        </div>
+        <div class="also-like">
+            <div class="also-like--title">
+                <h3>You may also like</h3>
+            </div>
+            <div class="may-like">
+                <div class="also-like--more">
+                    <!--                     <div class="catalog-cards--container">
+                        <div class="catalog-cards--img ctlg">
+                            <img src="./img/spiderman.png" alt="">
+                            <div class="catalog-cards--cart">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="20"
+                                    height="20">
+                                    <path
+                                        d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="catalog-cards--title">
+                            <h3>Plastation 5</h3>
+                        </div>
+                        <div class="catalog-cards--category">
+                            <p>Technology</p>
+                            <p>$439</p>
+                        </div>
+                    </div>
+                    </div> -->
+
+                </div>
+            </div>
+
+    </section>
+    <section id='cart'>
+        <div class="cart-container">
+            <div class="cart-gridContainer title-cart">
+                <div class="cart-title--left">
+                    <h2>Shopping Cart</h2>
+                    <h2>3 Items</h2>
+                </div>
+            </div>
+            <div class="cart-gridContainer summary-title">
+                <div class="cart-title--right">
+                    <h2>Order Summary</h2>
+                </div>
+            </div>
+            <div class="cart-gridContainer">
+                <div class="cart-list">
+                    <div class="cart-titleColumnOne">
+                        <h3>PRODUCT DETAILS</h3>
+                    </div>
+                    <div class="cart-titleColumns">
+                        <h3>QUANTITY</h3>
+                    </div>
+                    <div class="cart-titleColumns">
+                        <h3>PRICE</h3>
+                    </div>
+                    <div class="cart-titleColumns">
+                        <h3>TOTAL</h3>
+                    </div>
+                    <!-- <div class="cart-product">
+                        <div class="cart-product--img">
+                            <img src="./img/spiderman.png" alt="">
+                        </div>
+                        <div class="cart-product--info">
+                            <p>Playstation 5</p>
+                            <p>Technology</p>
+                            <p>Remove</p>
+                        </div>
+                    </div>
+                    <div class="cart-quantity">
+                        <div class="quantity-plus">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+                                <path
+                                    d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z" />
+                            </svg>
+                        </div>
+                        <div class="quantity-text">
+                            <p>2</p>
+                        </div>
+                        <div class="quantity-minus">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20" height="20">
+                                <path
+                                    d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="cart-price">
+                        <p>$44.0</p>
+                    </div>
+                    <div class="cart-total">
+                        <p>$44.0</p>
+                    </div> -->
+                </div>
+            </div>
+            <div class="cart-gridContainer summary">
+                <div class="cart-summary">
+                    <div class="cart-summary--items">
+                        <p>ITEMS <span>3</span></p>
+                        <p>$48.00</p>
+                    </div>
+                    <div class="cart-summary--items">
+                        <p>SHIPPING</p>
+                    </div>
+                    <div class="cart-summary--items">
+                        <select name="" id="">
+                            <option value="">Standard Delivery - $5</option>
+                        </select>
+                    </div>
+                    <div class="cart-summary--items">
+                        <p>PROMO CODE</p>
+                    </div>
+                    <div class="cart-summary--items">
+                        <input type="text">
+                    </div>
+                    <div class="cart-summary--items cart-dotted">
+                        <button class="cartButtonB">APPLY</button>
+                    </div>
+                    <div class="cart-summary--items">
+                        <p>TOTAL COST</p>
+                        <p class ="total-order">$462.38</p>
+                    </div>
+                    <div class="cart-summary--items">
+                        <button class="cartButtonA">CHECKOUT</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id='login'>
+        <div class="login-container">
+            <div class="containerLogin" id="container-login">
+                <div class="form-container sign-up">
+                    <form>
+                        <h1>Create Account</h1>
+                        <div class="social-icons">
+                            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                        <span>Or use your email for registeration</span>
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <button>Sign Up</button>
+
+                    </form>
+                </div>
+                <div class="form-container sign-in">
+                    <form>
+                        <h1>Sign in</h1>
+                        <div class="social-icons">
+                            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                        <span>Or use your email password</span>
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <a href="#">Forget Your Password?</a>
+                        <button>Sign In</button>
+
+                    </form>
+                </div>
+                <div class="toggle-container">
+                    <div class="toggle">
+                        <div class="toggle-panel toggle-left">
+                            <h1>Welcome Back!</h1>
+                            <p>Enter your personal details to use all of site feautures</p>
+                            <button class="hidden" id="loginBtn">Sign In</button>
+                        </div>
+                        <div class="toggle-panel toggle-right">
+                            <h1>Hello, Friend!</h1>
+                            <p>Register with your personal details to use all of site feautures</p>
+                            <button class="hidden" id="register">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <footer id='gridFooter'>
+        <div class="footer-content">
+            <div class="footer-content--left">
+                <h1>TH3 Enterprises</h1>
+                <div class="left-list">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20"
+                        height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20"
+                        height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="20"
+                        height="20"><!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="footer-content--right">
+                <div class="rigth-card">
+                    <h2>Home</h2>
+                    <ul>
+                        <li>Welcome</li>
+                        <li>Last News</li>
+                        <li>Favorites</li>
+                    </ul>
+                </div>
+                <div class="rigth-card">
+                    <h2>Packages</h2>
+                    <ul>
+                        <li>Basic</li>
+                        <li>Premium</li>
+                        <li>Luxure</li>
+                    </ul>
+                </div>
+                <div class="rigth-card">
+                    <h2>About Us</h2>
+                    <ul>
+                        <li>History</li>
+                        <li>Team</li>
+                        <li>Vision and Mission</li>
+                        <li>Clients Testemony</li>
+                    </ul>
+                </div>
+                <div class="rigth-card">
+                    <h2>Contact Us</h2>
+                    <ul>
+                        <li>th3@gmail.com</li>
+                        <li>+593 098672351</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./node.js"></script>
+    <script src="./main.js"></script>
+    <script src="./navigation.js"></script>
+</body>
+
+</html>
