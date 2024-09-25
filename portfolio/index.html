@@ -17,25 +17,25 @@
             </a>
             <ul>
                 <li>
-                    <a href="#Home">Home <br><span>Home</span></a>
+                    <a href="#Home" onclick="listItems();">Home <br><span>Home</span></a>
                 </li>
                 <li>
-                    <a href="#About">About <br><span>About</span></a>
+                    <a href="#About" onclick="listItems();">About <br><span>About</span></a>
                 </li>
                 <li>
-                    <a href="#Project">Projects <br><span>Projects</span></a>
+                    <a href="#Project" onclick="listItems();">Projects <br><span>Projects</span></a>
                 </li>
                 <li>
-                    <a href="#Skills">Skills <br><span>Skills</span></a>
+                    <a href="#Skills" onclick="listItems();">Skills <br><span>Skills</span></a>
                 </li>
                 <li>
-                    <a href="#Contact">Contact <br><span>Contact</span></a>
+                    <a href="#Contact" onclick="listItems();">Contact <br><span>Contact</span></a>
                 </li>
             </ul>
             <div class="toggle">
                 <i class='bx bx-moon'></i>
                 <i class='bx bx-sun'></i>
-                <i class='bx bx-menu'></i>
+                <i class='bx bx-menu' onclick="listItems();"></i>
             </div>
         </nav>
         <section class="Home" id="Home">
@@ -73,17 +73,22 @@
                     <h5 class="reveal">Backend Developer</h5>
                     <div class="socialmedia">
                         <i class='bx bxl-github'></i>
-                        <i class='bx bxl-linkedin-square' ></i>
-                        <i class='bx bxl-instagram' ></i>
+                        <i class='bx bxl-linkedin-square'></i>
+                        <i class='bx bxl-instagram'></i>
                     </div>
                 </div>
                 <div class="details">
                     <h2 class="heading">About <span>Myself</span></h2>
                     <p class="reveal">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, quaerat cum! Corporis et sunt odit? Quas cum iste, libero itaque asperiores ea soluta nulla similique, vitae fuga, sint placeat quam.
-                        <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quasi deleniti provident error at omnis enim asperiores autem aliquam harum? Alias ex inventore culpa omnis, dolore nihil vitae doloribus. Similique.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et, quaerat cum! Corporis et sunt
+                        odit? Quas cum iste, libero itaque asperiores ea soluta nulla similique, vitae fuga, sint
+                        placeat quam.
+                        <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quasi deleniti
+                        provident error at omnis enim asperiores autem aliquam harum? Alias ex inventore culpa omnis,
+                        dolore nihil vitae doloribus. Similique.
                     </p>
-                    <div class="btn"><a href="#" class="reveal">Know More <i class='bx bx-right-arrow-alt'></i></a></div>
+                    <div class="btn"><a href="#" class="reveal">Know More <i class='bx bx-right-arrow-alt'></i></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -95,7 +100,7 @@
                     <img src="./assets/img/responsive.jpg" alt="">
                     <h2>50+ Responsive Sites</h2>
                     <div class="hoverbox">
-                        <i class='bx bx-grid-alt' ></i>
+                        <i class='bx bx-grid-alt'></i>
                         <h1>50+ Responsive Sites</h1>
                         <a href="#">See all <i class='bx bxs-right-top-arrow-circle'></i></a>
                     </div>
@@ -104,7 +109,7 @@
                     <img src="./assets/img/landing.jpg" alt="">
                     <h2>30+ Landing Websites</h2>
                     <div class="hoverbox">
-                        <i class='bx bx-grid-alt' ></i>
+                        <i class='bx bx-grid-alt'></i>
                         <h1>30+ Landing Websites</h1>
                         <a href="#">See all <i class='bx bxs-right-top-arrow-circle'></i></a>
                     </div>
@@ -113,7 +118,7 @@
                     <img src="./assets/img/chatbot.jpg" alt="">
                     <h2>15+ React Projects</h2>
                     <div class="hoverbox">
-                        <i class='bx bx-grid-alt' ></i>
+                        <i class='bx bx-grid-alt'></i>
                         <h1>15+ React Projects</h1>
                         <a href="#">See all <i class='bx bxs-right-top-arrow-circle'></i></a>
                     </div>
@@ -122,7 +127,7 @@
                     <img src="./assets/img/machine.jpg" alt="">
                     <h2>8 Machine Learning</h2>
                     <div class="hoverbox">
-                        <i class='bx bx-grid-alt' ></i>
+                        <i class='bx bx-grid-alt'></i>
                         <h1>8 Machine Learning</h1>
                         <a href="#">See all <i class='bx bxs-right-top-arrow-circle'></i></a>
                     </div>
@@ -131,7 +136,7 @@
                     <img src="./assets/img/commerce.jpg" alt="">
                     <h2>20+ Ecommerce Pages</h2>
                     <div class="hoverbox">
-                        <i class='bx bx-grid-alt' ></i>
+                        <i class='bx bx-grid-alt'></i>
                         <h1>20+ Ecommerce Pages</h1>
                         <a href="#">See all <i class='bx bxs-right-top-arrow-circle'></i></a>
                     </div>
@@ -140,7 +145,7 @@
                     <img src="./assets/img/chatbot.jpg" alt="">
                     <h2>IA Project</h2>
                     <div class="hoverbox">
-                        <i class='bx bx-grid-alt' ></i>
+                        <i class='bx bx-grid-alt'></i>
                         <h1>IA Project</h1>
                         <a href="#">See all <i class='bx bxs-right-top-arrow-circle'></i></a>
                     </div>
@@ -151,19 +156,102 @@
         <section class="Skills page" id="Skills">
             <h2 class="heading">Creative <span>Skills</span></h2>
             <div class="wrapper">
+                <div class="technicalskills">
+                    <h2 class="reveal">Technical Skills</h2>
+                    <div class="skillbox">
+                        <div class="reveal">
+                            <p class="text">Typing speed - 120wpm</p>
+                            <span></span>
+                        </div>
+                        <div class="reveal">
+                            <p class="text">Photoshop - 50% </p>
+                            <span></span>
+                        </div>
+                        <div class="reveal">
+                            <p class="text">MS Office - 60%</p>
+                            <span></span>
+                        </div>
+                        <div class="reveal">
+                            <p class="text">Communication skills - 40%</p>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="codingskills">
+                    <h2 class="reveal">Coding Skills</h2>
+                    <div class="skillbox">
+                        <div class="reveal">
+                            <span>75%</span>
+                            <p class="text">HTML</p>
+                        </div>
+                        <div class="reveal">
+                            <span>75%</span>
+                            <p class="text">Javascript</p>
+                        </div>
+                        <div class="reveal">
+                            <span>75%</span>
+                            <p class="text">CSS</p>
+                        </div>
+                        <div class="reveal">
+                            <span>75%</span>
+                            <p class="text">React</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="Contact page" id="Contact">
             <h2 class="heading">Contact <span>Me</span></h2>
             <div class="wrapper">
+                <div class="contactinfo">
+                    <h1 class="reveal">Get in touch</h1>
+                    <div class="textinfo reveal">
+                        <i class='bx bx-envelope'></i>
+                        <p>erickloopeze@hotmail.com</p>
+                    </div>
+                    <div class="textinfo reveal">
+                        <i class='bx bxs-phone' ></i>
+                        <p>0984094896</p>
+                    </div>
+                    <div class="textinfo reveal">
+                        <i class='bx bx-map' ></i>
+                        <p>Quito</p>
+                    </div>
+
+                </div>
+                <div class="contactinfo form">
+                    <form action="#" class="reveal">
+                        <div class="entrybox usernames">
+                            <input type="text" placeholder="First Name" required>
+                            <input type="text" placeholder="Last Name" required>
+                        </div>
+                        <div class="entrybox usernames">
+                            <input type="email" placeholder="Email address" required>
+                        </div>
+                        <div class="entrybox usernames">
+                            <textarea type="text" placeholder="Enter your queries." required></textarea>
+                        </div>
+                        <button class="submit">Submit<i class='bx bx-send' ></i></button>
+                    </form>
+
+                </div>
 
             </div>
         </section>
 
+        <div class="scrolltop">
+            <a href="#Home"><i class='bx bx-up-arrow-alt' ></i></a>
+        </div>
 
+        <div class="theme-colors">
+            <span class="colorpicker"></span>
+            <span class="colorpicker"></span>
+            <span class="colorpicker"></span>
+            <span class="colorpicker"></span>
+            <h2>Choose your theme <i class='bx bx-right-arrow-alt' ></i></h2>
+        </div>
     </div>
-
     <script src="app.js" />
 </body>
 
